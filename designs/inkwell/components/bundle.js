@@ -142,3 +142,34 @@
     ensureFilter: ensureFilter
   };
 })();
+
+/* Shared component extras */
+(function () {
+  var NS = window.Inkwell; if (!NS) return; var P = "ik";
+  function select(root) {
+    var btn = root.querySelector("." + P + "-select__btn"), opts = [].slice.call(root.querySelectorAll("." + P + "-select__opt")), idx = -1, val = root.querySelector("[data-value]");
+    function open(o) { root.classList.toggle("is-open", o); btn.setAttribute("aria-expanded", o ? "true" : "false"); if (!o) { idx = -1; opts.forEach(function (x) { x.classList.remove("is-focused"); }); } }
+    function focus(n) { idx = (n + opts.length) % opts.length; opts.forEach(function (x, k) { x.classList.toggle("is-focused", k === idx); }); }
+    btn.addEventListener("click", function () { open(!root.classList.contains("is-open")); });
+    root.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { open(false); btn.focus(); }
+      else if (e.key === "ArrowDown") { e.preventDefault(); open(true); focus(idx + 1); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); open(true); focus(idx - 1); }
+      else if (e.key === "Enter" && idx > -1) { e.preventDefault(); opts[idx].click(); }
+    });
+    opts.forEach(function (o) { o.addEventListener("click", function () { opts.forEach(function (x) { x.setAttribute("aria-selected", x === o ? "true" : "false"); }); if (val) val.textContent = o.textContent; open(false); btn.focus(); }); });
+    document.addEventListener("click", function (e) { if (!root.contains(e.target)) open(false); });
+  }
+  function tabset(root) {
+    var tabs = [].slice.call(root.querySelectorAll('[role="tab"]'));
+    function show(t) { tabs.forEach(function (x) { var on = x === t; x.setAttribute("aria-selected", on ? "true" : "false"); x.tabIndex = on ? 0 : -1; var pn = document.getElementById(x.getAttribute("aria-controls")); if (pn) pn.hidden = !on; }); t.focus(); }
+    tabs.forEach(function (t, i) { t.addEventListener("click", function () { show(t); }); t.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") { e.preventDefault(); show(tabs[(i + 1) % tabs.length]); } if (e.key === "ArrowLeft") { e.preventDefault(); show(tabs[(i - 1 + tabs.length) % tabs.length]); } }); });
+  }
+  NS.select = select; NS.tabset = tabset;
+  NS.initExtras = function (r) {
+    r = r || document;
+    [].forEach.call(r.querySelectorAll("." + P + "-select"), select);
+    [].forEach.call(r.querySelectorAll("." + P + "-tabset"), tabset);
+    [].forEach.call(r.querySelectorAll("[data-dismiss]"), function (b) { b.addEventListener("click", function () { var t = b.closest("[data-dismissible]"); if (t) t.hidden = true; }); });
+  };
+})();

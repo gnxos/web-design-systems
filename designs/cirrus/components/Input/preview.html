@@ -1,0 +1,10 @@
+<!-- @dsCard group="Forms" height=360 subtitle="Labelled field, invalid state, inline capture" -->
+<!doctype html>
+<html data-theme="light">
+<head><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{margin:0;padding:24px;box-sizing:border-box}</style></head>
+<body>
+<div style="display:grid;gap:28px"><div class="cr-field"><label for="em">Work email</label><input id="em" type="email" placeholder="you@company.com"><small>We only send the weekly digest.</small></div><div class="cr-field"><label for="em2">Invalid example</label><input id="em2" type="email" value="name@" aria-invalid="true"><small>Enter an address like name@company.com.</small></div><form class="cr-capture" onsubmit="return false"><input type="email" placeholder="you@company.com" aria-label="Email address"><button class="cr-btn cr-btn--lg" type="submit">Get started</button></form></div>
+<script>if(window.Cirrus&&Cirrus.init)try{Cirrus.init();}catch(e){};if(window.Cirrus&&Cirrus.initExtras)Cirrus.initExtras();</script>
+</body>
+</html>

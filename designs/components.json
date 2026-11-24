@@ -1,0 +1,318 @@
+{
+  "systems": [
+    "inkwell",
+    "afterglow",
+    "halftone",
+    "dewpoint",
+    "cirrus"
+  ],
+  "types": [
+    {
+      "type": "Button",
+      "folders": {
+        "inkwell": "Button",
+        "afterglow": "Button",
+        "halftone": "Button",
+        "dewpoint": "Button",
+        "cirrus": "Button"
+      },
+      "added": []
+    },
+    {
+      "type": "Chip",
+      "folders": {
+        "inkwell": "Chip",
+        "afterglow": "Chip",
+        "halftone": "Tag",
+        "dewpoint": "Chip",
+        "cirrus": "Chip"
+      },
+      "added": [
+        "inkwell",
+        "cirrus"
+      ]
+    },
+    {
+      "type": "NavBar",
+      "folders": {
+        "inkwell": "NavBar",
+        "afterglow": "NavBar",
+        "halftone": "NavPill",
+        "dewpoint": "NavBar",
+        "cirrus": "NavBar"
+      },
+      "added": [
+        "inkwell",
+        "afterglow"
+      ]
+    },
+    {
+      "type": "Tabs",
+      "folders": {
+        "inkwell": "Tabs",
+        "afterglow": "Tabs",
+        "halftone": "TabPills",
+        "dewpoint": "Tabs",
+        "cirrus": "SideTabs"
+      },
+      "added": [
+        "inkwell",
+        "afterglow",
+        "dewpoint"
+      ]
+    },
+    {
+      "type": "Banner",
+      "folders": {
+        "inkwell": "Banner",
+        "afterglow": "Banner",
+        "halftone": "Banner",
+        "dewpoint": "AnnouncementBar",
+        "cirrus": "Banner"
+      },
+      "added": [
+        "inkwell",
+        "afterglow",
+        "halftone"
+      ]
+    },
+    {
+      "type": "Hero",
+      "folders": {
+        "inkwell": "Hero",
+        "afterglow": "Hero",
+        "halftone": "Hero",
+        "dewpoint": "Hero",
+        "cirrus": "Hero"
+      },
+      "added": [
+        "inkwell"
+      ]
+    },
+    {
+      "type": "SectionHeader",
+      "folders": {
+        "inkwell": "SectionHeader",
+        "afterglow": "SectionHeader",
+        "halftone": "Eyebrow",
+        "dewpoint": "SectionHeader",
+        "cirrus": "SectionHeader"
+      },
+      "added": [
+        "inkwell",
+        "cirrus"
+      ]
+    },
+    {
+      "type": "FeatureCard",
+      "folders": {
+        "inkwell": "FeatureCard",
+        "afterglow": "FeatureCard",
+        "halftone": "FeatureCard",
+        "dewpoint": "FeatureBlock",
+        "cirrus": "FeatureCard"
+      },
+      "added": []
+    },
+    {
+      "type": "MediaTile",
+      "folders": {
+        "inkwell": "MediaTile",
+        "afterglow": "Tile",
+        "halftone": "MediaTile",
+        "dewpoint": "MediaTile",
+        "cirrus": "MediaTile"
+      },
+      "added": [
+        "inkwell",
+        "halftone",
+        "cirrus"
+      ]
+    },
+    {
+      "type": "Stat",
+      "folders": {
+        "inkwell": "Stat",
+        "afterglow": "StatTile",
+        "halftone": "StatCard",
+        "dewpoint": "Stat",
+        "cirrus": "Stat"
+      },
+      "added": [
+        "dewpoint",
+        "cirrus"
+      ]
+    },
+    {
+      "type": "Testimonial",
+      "folders": {
+        "inkwell": "Testimonial",
+        "afterglow": "Testimonial",
+        "halftone": "Testimonial",
+        "dewpoint": "Testimonial",
+        "cirrus": "Testimonial"
+      },
+      "added": [
+        "inkwell",
+        "afterglow",
+        "dewpoint"
+      ]
+    },
+    {
+      "type": "Card",
+      "folders": {
+        "inkwell": "ProductCard",
+        "afterglow": "DataCard",
+        "halftone": "GlassCards",
+        "dewpoint": "Card",
+        "cirrus": "GlassCard"
+      },
+      "added": [
+        "dewpoint"
+      ]
+    },
+    {
+      "type": "Table",
+      "folders": {
+        "inkwell": "Table",
+        "afterglow": "ListRows",
+        "halftone": "Table",
+        "dewpoint": "Table",
+        "cirrus": "DataTable"
+      },
+      "added": [
+        "inkwell",
+        "halftone",
+        "dewpoint"
+      ]
+    },
+    {
+      "type": "Dropdown",
+      "folders": {
+        "inkwell": "Dropdown",
+        "afterglow": "Dropdown",
+        "halftone": "Dropdown",
+        "dewpoint": "Dropdown",
+        "cirrus": "Dropdown"
+      },
+      "added": [
+        "inkwell",
+        "afterglow",
+        "halftone",
+        "cirrus"
+      ]
+    },
+    {
+      "type": "Input",
+      "folders": {
+        "inkwell": "AskBar",
+        "afterglow": "Input",
+        "halftone": "Input",
+        "dewpoint": "Newsletter",
+        "cirrus": "Input"
+      },
+      "added": [
+        "afterglow",
+        "halftone",
+        "cirrus"
+      ]
+    },
+    {
+      "type": "Footer",
+      "folders": {
+        "inkwell": "Footer",
+        "afterglow": "Footer",
+        "halftone": "Footer",
+        "dewpoint": "Footer",
+        "cirrus": "Footer"
+      },
+      "added": [
+        "inkwell",
+        "afterglow",
+        "halftone"
+      ]
+    },
+    {
+      "type": "PostCard",
+      "folders": {
+        "inkwell": "PostCard",
+        "afterglow": "PostCard",
+        "halftone": "PostCard",
+        "dewpoint": "PostCard",
+        "cirrus": "PostCard"
+      },
+      "added": [
+        "inkwell",
+        "afterglow",
+        "halftone",
+        "cirrus"
+      ]
+    },
+    {
+      "type": "Ticker",
+      "folders": {
+        "inkwell": "Ticker",
+        "afterglow": "Ticker",
+        "halftone": "NewsTicker",
+        "dewpoint": "Ticker",
+        "cirrus": "Ticker"
+      },
+      "added": [
+        "inkwell",
+        "afterglow",
+        "dewpoint",
+        "cirrus"
+      ]
+    },
+    {
+      "type": "Terminal",
+      "folders": {
+        "inkwell": "Terminal",
+        "afterglow": "Terminal",
+        "halftone": "Terminal",
+        "dewpoint": "Terminal",
+        "cirrus": "Terminal"
+      },
+      "added": [
+        "inkwell",
+        "halftone",
+        "dewpoint",
+        "cirrus"
+      ]
+    },
+    {
+      "type": "Accordion",
+      "folders": {
+        "inkwell": "Accordion",
+        "afterglow": "Accordion",
+        "halftone": "Accordion",
+        "dewpoint": "Accordion",
+        "cirrus": "Accordion"
+      },
+      "added": [
+        "inkwell",
+        "afterglow",
+        "halftone",
+        "dewpoint",
+        "cirrus"
+      ]
+    },
+    {
+      "type": "Pricing",
+      "folders": {
+        "inkwell": "Pricing",
+        "afterglow": "Pricing",
+        "halftone": "Pricing",
+        "dewpoint": "Pricing",
+        "cirrus": "Pricing"
+      },
+      "added": [
+        "inkwell",
+        "afterglow",
+        "halftone",
+        "dewpoint",
+        "cirrus"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "inkwell": {
+    "zip": "downloads/inkwell.zip",
+    "bytes": 83385,
+    "files": 81,
+    "components": 26,
+    "colors": 10,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "assets": 17,
+    "contents": [
+      "INSTALL.md",
+      "LICENSE.txt",
+      "README.md",
+      "assets",
+      "components",
+      "illustration.md",
+      "index.html",
+      "motion.md",
+      "tokens.css",
+      "tokens.json"
+    ]
+  },
+  "afterglow": {
+    "zip": "downloads/afterglow.zip",
+    "bytes": 68748,
+    "files": 63,
+    "components": 22,
+    "colors": 52,
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "assets": 7,
+    "contents": [
+      "INSTALL.md",
+      "LICENSE.txt",
+      "README.md",
+      "assets",
+      "components",
+      "imagery.md",
+      "index.html",
+      "motion.md",
+      "tokens.css",
+      "tokens.json"
+    ]
+  },
+  "halftone": {
+    "zip": "downloads/halftone.zip",
+    "bytes": 80803,
+    "files": 63,
+    "components": 23,
+    "colors": 28,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "assets": 5,
+    "contents": [
+      "INSTALL.md",
+      "LICENSE.txt",
+      "README.md",
+      "assets",
+      "components",
+      "imagery.md",
+      "index.html",
+      "motion.md",
+      "tokens.css",
+      "tokens.json"
+    ]
+  },
+  "dewpoint": {
+    "zip": "downloads/dewpoint.zip",
+    "bytes": 110141,
+    "files": 76,
+    "components": 21,
+    "colors": 31,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "assets": 17,
+    "contents": [
+      "INSTALL.md",
+      "LICENSE.txt",
+      "README.md",
+      "accessibility.md",
+      "assets",
+      "components",
+      "imagery.md",
+      "index.html",
+      "motion.md",
+      "tokens.css",
+      "tokens.json"
+    ]
+  },
+  "cirrus": {
+    "zip": "downloads/cirrus.zip",
+    "bytes": 74725,
+    "files": 73,
+    "components": 23,
+    "colors": 41,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "assets": 12,
+    "contents": [
+      "INSTALL.md",
+      "LICENSE.txt",
+      "README.md",
+      "accessibility.md",
+      "assets",
+      "components",
+      "imagery.md",
+      "index.html",
+      "motion.md",
+      "tokens.css",
+      "tokens.json"
+    ]
+  },
+  "all-systems": {
+    "zip": "downloads/all-systems.zip",
+    "bytes": 416307,
+    "systems": [
+      "inkwell",
+      "afterglow",
+      "halftone",
+      "dewpoint",
+      "cirrus"
+    ]
+  }
+}

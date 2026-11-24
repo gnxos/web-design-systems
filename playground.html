@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design system playground</title>
+<link rel="icon" href="data:,">
+<style>
+  :root { color-scheme: light dark; --bg:#f4f4f5; --panel:#fff; --fg:#18181b; --muted:#5f6368; --line:#dcdce0; --accent:#2457d6; --on-accent:#fff; --ok:#1a7f37; --warn:#9a6700; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f0f11; --panel:#17171a; --fg:#f2f2f4; --muted:#a1a1aa; --line:#2b2b31; --accent:#7aa2ff; --on-accent:#0b0b0d; --ok:#4ac26b; --warn:#e3b341; } }
+  * { box-sizing:border-box; }
+  html, body { height:100%; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif; display:grid; grid-template-columns:340px minmax(0,1fr); }
+  aside { background:var(--panel); border-right:1px solid var(--line); height:100vh; overflow:auto; padding:16px; display:flex; flex-direction:column; gap:14px; }
+  main { height:100vh; overflow:auto; padding:20px; min-width:0; }
+  h1 { font-size:16px; margin:0; letter-spacing:-.01em; }
+  h2 { font-size:12px; margin:0 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; font-weight:600; }
+  label { display:flex; flex-direction:column; gap:4px; font-size:12px; color:var(--muted); }
+  select, input[type=text], input[type=search] { font:inherit; color:var(--fg); background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:8px 10px; width:100%; }
+  button { font:inherit; color:var(--fg); background:transparent; border:1px solid var(--line); border-radius:8px; padding:6px 10px; cursor:pointer; }
+  button:hover { background:var(--bg); }
+  button.primary { background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+  button[aria-pressed="true"] { background:var(--fg); color:var(--bg); border-color:var(--fg); }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  .row { display:flex; gap:6px; flex-wrap:wrap; }
+  .seg { display:flex; gap:0; }
+  .seg button { border-radius:0; margin-left:-1px; }
+  .seg button:first-child { border-radius:8px 0 0 8px; margin-left:0; }
+  .seg button:last-child { border-radius:0 8px 8px 0; }
+  .status { font-size:12px; color:var(--muted); display:flex; align-items:center; gap:8px; }
+  .dot { width:8px; height:8px; border-radius:50%; background:var(--muted); }
+  .dot.live { background:var(--ok); animation:pulse 2s infinite; }
+  .dot.flash { background:var(--warn); }
+  @keyframes pulse { 50% { opacity:.35; } }
+  @media (prefers-reduced-motion: reduce) { .dot.live { animation:none; } }
+  .notice { background:color-mix(in srgb, var(--warn) 15%, transparent); border:1px solid var(--warn); border-radius:8px; padding:10px 12px; font-size:12px; }
+  .notice code { background:var(--bg); padding:1px 5px; border-radius:4px; }
+  .links { display:flex; gap:12px; flex-wrap:wrap; font-size:13px; }
+  .links a { color:var(--accent); }
+  .tokens { display:flex; flex-direction:column; gap:3px; }
+  .tgroup { margin:10px 0 2px; font-size:11px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+  .trow { display:grid; grid-template-columns:26px minmax(0,1fr) 112px; gap:6px; align-items:center; }
+  .trow .sw { width:24px; height:24px; border-radius:6px; border:1px solid var(--line); }
+  .trow .nm { font:12px/1.2 ui-monospace,Menlo,monospace; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .trow input { padding:4px 6px; font:12px ui-monospace,Menlo,monospace; border-radius:6px; }
+  .trow.changed input { border-color:var(--accent); }
+  .top { display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
+  .top p { margin:0; color:var(--muted); max-width:70ch; }
+  .cover { margin:0 0 18px; border-radius:14px; overflow:hidden; border:1px solid var(--line); background:var(--panel); }
+  .cover iframe { display:block; width:960px; height:288px; border:0; transform-origin:0 0; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:14px; margin:0 0 16px; overflow:hidden; }
+  .card > header { display:flex; flex-wrap:wrap; gap:8px 12px; align-items:baseline; padding:10px 14px; border-bottom:1px solid var(--line); }
+  .card > header h3 { margin:0; font-size:15px; }
+  .card > header span { color:var(--muted); font-size:12px; flex:1 1 220px; }
+  .card > header a, .card > header button { font-size:12px; color:var(--accent); background:none; border:0; padding:0; text-decoration:underline; cursor:pointer; }
+  .stage { overflow:auto; background:repeating-conic-gradient(color-mix(in srgb,var(--line) 35%,transparent) 0 25%,transparent 0 50%) 0 0/20px 20px; padding:0; }
+  .frame { margin:0 auto; background:#fff; transition:width .2s ease; max-width:100%; }
+  @media (prefers-reduced-motion: reduce) { .frame { transition:none; } }
+  .frame iframe { display:block; width:100%; border:0; }
+  .empty { padding:40px; text-align:center; color:var(--muted); }
+  @media (max-width: 900px) { body { grid-template-columns:1fr; } aside { height:auto; border-right:0; border-bottom:1px solid var(--line); } main { height:auto; } }
+</style>
+</head>
+<body>
+<aside>
+  <div>
+    <h1>Design system playground</h1>
+    <div class="status"><span class="dot" id="dot"></span><span id="status">Starting…</span></div>
+  </div>
+  <div class="notice" id="fileNotice" hidden>This page is open from <code>file://</code>, so browsers block live reading of the previews. Serve the folder instead: <code>python3 -m http.server 8000</code> then open <code>http://localhost:8000/playground.html</code>.</div>
+
+  <section>
+    <h2>System</h2>
+    <label>Design system
+      <select id="system" aria-label="Design system"></select>
+    </label>
+    <div class="links" id="links" style="margin-top:8px"></div>
+  </section>
+
+  <section>
+    <h2>Theme</h2>
+    <div class="seg" id="themes" role="group" aria-label="Theme"></div>
+  </section>
+
+  <section>
+    <h2>Viewport</h2>
+    <div class="seg" id="viewports" role="group" aria-label="Viewport width">
+      <button data-w="100%" aria-pressed="true">Desktop</button>
+      <button data-w="820px" aria-pressed="false">Tablet</button>
+      <button data-w="390px" aria-pressed="false">Phone</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Components</h2>
+    <label>Show
+      <select id="component" aria-label="Component filter"><option value="">All components</option></select>
+    </label>
+  </section>
+
+  <section>
+    <h2>Live reload</h2>
+    <label style="flex-direction:row;align-items:center;gap:8px;color:var(--fg)"><input type="checkbox" id="auto" checked> Reload when files change (every 1.5s)</label>
+    <div class="row" style="margin-top:8px"><button id="reloadAll">Reload all now</button></div>
+  </section>
+
+  <section>
+    <h2>Tokens <span id="changedCount" style="text-transform:none;letter-spacing:0"></span></h2>
+    <div class="row" style="margin-bottom:8px">
+      <button id="resetTokens">Reset edits</button>
+      <button id="copyCss">Copy CSS</button>
+      <button id="downloadJson" class="primary">Download tokens.json</button>
+    </div>
+    <input type="search" id="tokenFilter" placeholder="Filter tokens" aria-label="Filter tokens" style="margin-bottom:8px">
+    <div class="tokens" id="tokens"></div>
+  </section>
+</aside>
+
+<main>
+  <div class="top"><div><h1 id="sysName" style="font-size:22px"></h1><p id="sysLede"></p></div></div>
+  <div class="cover" id="coverBox"><iframe id="cover" title="Cover"></iframe></div>
+  <div id="cards"></div>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var SYSTEMS = [
+    { id: "inkwell", name: "Inkwell" },
+    { id: "afterglow", name: "Afterglow" },
+    { id: "halftone", name: "Halftone" },
+    { id: "dewpoint", name: "Dewpoint" },
+    { id: "cirrus", name: "Cirrus" }
+  ];
+  var isFile = location.protocol === "file:";
+  var $ = function (id) { return document.getElementById(id); };
+  var state = { sys: null, base: "", themes: [], theme: "", width: "100%", only: "", tokens: null, comps: [], overrides: {}, hashes: {}, auto: true };
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function hash(s) { var h = 5381; for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return h + ":" + s.length; }
+  function fetchText(u, bust) { return fetch(bust ? u + (u.indexOf("?") > -1 ? "&" : "?") + "_=" + Date.now() : u, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status + " " + u); return r.text(); }); }
+
+  /* ---------- system dropdown ---------- */
+  var sel = $("system");
+  SYSTEMS.forEach(function (s) { var o = document.createElement("option"); o.value = s.id; o.textContent = s.name; sel.appendChild(o); });
+  var other = document.createElement("option"); other.value = "__other"; other.textContent = "Other folder in designs/…"; sel.appendChild(other);
+  sel.addEventListener("change", function () {
+    if (sel.value === "__other") {
+      var id = (prompt("Folder name inside designs/ (it needs index.html and tokens.json):") || "").trim();
+      if (!id) { sel.value = state.sys; return; }
+      if (!SYSTEMS.some(function (s) { return s.id === id; })) { SYSTEMS.push({ id: id, name: id }); var o = document.createElement("option"); o.value = id; o.textContent = id; sel.insertBefore(o, other); }
+      sel.value = id;
+    }
+    location.hash = sel.value;
+  });
+  window.addEventListener("hashchange", function () { var id = location.hash.slice(1); if (id && id !== state.sys) loadSystem(id); });
+
+  /* ---------- load a system ---------- */
+  function loadSystem(id) {
+    state.sys = id; state.base = "designs/" + id + "/"; state.overrides = {}; state.hashes = {}; state.only = ""; $("component").value = "";
+    setStatus("Loading " + id + "…", "flash");
+    if (isFile) $("fileNotice").hidden = false;
+    return Promise.all([fetchText(state.base + "index.html", true), fetchText(state.base + "tokens.json", true)]).then(function (res) {
+      var doc = new DOMParser().parseFromString(res[0], "text/html");
+      state.tokens = JSON.parse(res[1]);
+      state.themes = (state.tokens.color && state.tokens.color.themes || []).map(function (t) { return t.id; });
+      if (!state.themes.length) state.themes = ["light"];
+      if (state.themes.indexOf(state.theme) < 0) state.theme = state.themes[0];
+      state.comps = [].slice.call(doc.querySelectorAll("section.card")).map(function (c) {
+        var f = c.querySelector("iframe"); var sp = c.querySelector("header span"); var a = c.querySelector("header a");
+        return { name: (c.querySelector("h2") || {}).textContent || "", sub: sp ? sp.textContent : "", src: f ? f.getAttribute("data-src") : "", height: f ? parseInt((f.getAttribute("style") || "").replace(/[^0-9]/g, "")) || 300 : 300, guide: a ? a.getAttribute("href") : "" };
+      }).filter(function (c) { return c.src; });
+      var ttl = (doc.querySelector("h1") || {}).textContent || (state.tokens.name || id);
+      var lede = (doc.querySelector("p.lede") || {}).textContent || "";
+      $("sysName").textContent = state.tokens.name || ttl; $("sysLede").textContent = lede;
+      sel.value = id;
+      buildComponentSelect(); buildThemeButtons(); buildLinks(); buildTokenEditor(); renderAll();
+      pollNow(true);
+    }).catch(function (e) {
+      $("cards").innerHTML = '<div class="empty">Could not load <b>' + esc(id) + '</b>: ' + esc(e.message) + '.<br>Open this page over http (for example <code>python3 -m http.server 8000</code>) from the repo root.</div>';
+      setStatus("Load failed", "");
+    });
+  }
+
+  function buildLinks() {
+    var l = [["README.md", "Brand book"], ["imagery.md", "Imagery"], ["illustration.md", "Illustration"], ["motion.md", "Motion"], ["accessibility.md", "Accessibility"], ["tokens.json", "tokens.json"], ["index.html", "Full viewer"]];
+    $("links").innerHTML = l.map(function (x) { return '<a href="' + state.base + x[0] + '" target="_blank" rel="noopener">' + x[1] + "</a>"; }).join("");
+  }
+  function buildComponentSelect() {
+    var s = $("component"); s.innerHTML = '<option value="">All components</option>' + state.comps.map(function (c) { return '<option value="' + esc(c.name) + '">' + esc(c.name) + "</option>"; }).join("");
+  }
+  function buildThemeButtons() {
+    var box = $("themes"); box.innerHTML = "";
+    state.themes.forEach(function (t) { var b = document.createElement("button"); b.textContent = t; b.setAttribute("aria-pressed", t === state.theme ? "true" : "false"); b.addEventListener("click", function () { state.theme = t; [].forEach.call(box.children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); }); applyAllFrames(); buildTokenEditor(); }); box.appendChild(b); });
+  }
+  [].forEach.call($("viewports").children, function (b) { b.addEventListener("click", function () { state.width = b.getAttribute("data-w"); [].forEach.call($("viewports").children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); }); document.querySelectorAll(".frame").forEach(function (f) { f.style.width = state.width; }); setTimeout(measureAll, 260); }); });
+  $("component").addEventListener("change", function () { state.only = $("component").value; renderAll(); });
+
+  /* ---------- render previews ---------- */
+  function renderAll() {
+    var box = $("cards"); box.innerHTML = "";
+    var list = state.comps.filter(function (c) { return !state.only || c.name === state.only; });
+    if (!list.length) { box.innerHTML = '<div class="empty">No components found in index.html.</div>'; }
+    list.forEach(function (c) {
+      var sec = document.createElement("section"); sec.className = "card"; sec.setAttribute("data-comp", c.name);
+      sec.innerHTML = '<header><h3>' + esc(c.name) + "</h3><span>" + esc(c.sub) + '</span><button type="button" data-reload>Reload</button><a href="' + state.base + esc(c.src) + '" target="_blank" rel="noopener">Open</a>' + (c.guide ? '<a href="' + state.base + esc(c.guide) + '" target="_blank" rel="noopener">Guidelines</a>' : "") + '</header><div class="stage"><div class="frame" style="width:' + state.width + '"><iframe loading="lazy" title="' + esc(c.name) + ' preview" style="height:' + c.height + 'px"></iframe></div></div>';
+      var f = sec.querySelector("iframe"); f.setAttribute("data-src", c.src);
+      sec.querySelector("[data-reload]").addEventListener("click", function () { loadFrame(f); });
+      box.appendChild(sec); wireFrame(f); loadFrame(f);
+    });
+    var cv = $("cover"); cv.setAttribute("data-src", "components/Cover/preview.html"); wireFrame(cv); loadFrame(cv);
+    fitCover();
+  }
+  function frameUrl(f) { return state.base + f.getAttribute("data-src") + "?theme=" + encodeURIComponent(state.theme) + "&_=" + Date.now(); }
+  function loadFrame(f) { f.src = frameUrl(f); }
+  function wireFrame(f) { f.addEventListener("load", function () { applyFrame(f); measure(f); }); }
+
+  /* ---------- live theme + token overrides inside same-origin frames ---------- */
+  function overrideCss() {
+    var out = [], t = state.theme, per = state.overrides[t] || {}, all = state.overrides["*"] || {};
+    var a = Object.keys(per).map(function (k) { return "--" + k + ":" + per[k] + " !important"; });
+    var b = Object.keys(all).map(function (k) { return "--" + k + ":" + all[k] + " !important"; });
+    if (a.length) out.push('html[data-theme="' + t + '"]{' + a.join(";") + "}");
+    if (b.length) out.push("html{" + b.join(";") + "}");
+    return out.join("\n");
+  }
+  function applyFrame(f) {
+    var d; try { d = f.contentDocument; if (!d || !d.documentElement) return; } catch (e) { return; }
+    d.documentElement.setAttribute("data-theme", state.theme);
+    var st = d.getElementById("pg-override"); if (!st) { st = d.createElement("style"); st.id = "pg-override"; (d.head || d.documentElement).appendChild(st); }
+    st.textContent = overrideCss();
+    try { var win = f.contentWindow; win.dispatchEvent(new Event("resize")); } catch (e) {}
+  }
+  function applyAllFrames() { document.querySelectorAll("iframe").forEach(applyFrame); setTimeout(measureAll, 80); }
+
+  /* ---------- auto height ---------- */
+  function measure(f) {
+    if (f.id === "cover") return;
+    var d; try { d = f.contentDocument; if (!d || !d.body) return; } catch (e) { return; }
+    var h = Math.max(d.documentElement.scrollHeight, d.body.scrollHeight); if (h > 40) f.style.height = Math.ceil(h) + "px";
+    if (!f.__ro && "ResizeObserver" in window) { f.__ro = new ResizeObserver(function () { try { var hh = Math.max(d.documentElement.scrollHeight, d.body.scrollHeight); if (hh > 40) f.style.height = Math.ceil(hh) + "px"; } catch (e) {} }); f.__ro.observe(d.body); }
+  }
+  function measureAll() { document.querySelectorAll(".card iframe").forEach(measure); }
+  function fitCover() { var box = $("coverBox"), f = $("cover"); var s = Math.min(1, box.clientWidth / 960); f.style.transform = "scale(" + s + ")"; box.style.height = (288 * s) + "px"; }
+  window.addEventListener("resize", fitCover);
+
+  /* ---------- token editor ---------- */
+  var FAMILIES = ["spacing", "radius", "shadow", "blur", "layout", "duration", "easing", "size", "stroke", "opacity", "zIndex"];
+  function colorOf(t, theme) { var v = t.value; return typeof v === "string" ? v : (v[theme] != null ? v[theme] : v[state.themes[0]]); }
+  function isHex(v) { return /^#[0-9a-f]{6}([0-9a-f]{2})?$/i.test(v); }
+  function currentVal(group, t) {
+    if (group === "color") { var o = (state.overrides[state.theme] || {})[t.name]; return o != null ? o : colorOf(t, state.theme); }
+    var g = (state.overrides["*"] || {})[t.name]; if (g != null) return g; var v = t.value; return typeof v === "string" ? v : (v[state.theme] != null ? v[state.theme] : v[state.themes[0]]);
+  }
+  function setOverride(group, name, val, orig) {
+    var key = group === "color" ? state.theme : "*"; state.overrides[key] = state.overrides[key] || {};
+    if (val === orig || val === "") delete state.overrides[key][name]; else state.overrides[key][name] = val;
+    applyAllFrames(); updateCount();
+  }
+  function updateCount() { var n = 0; Object.keys(state.overrides).forEach(function (k) { n += Object.keys(state.overrides[k]).length; }); $("changedCount").textContent = n ? "(" + n + " edited)" : ""; }
+  function buildTokenEditor() {
+    var box = $("tokens"); box.innerHTML = ""; var q = ($("tokenFilter").value || "").toLowerCase();
+    var groups = [["color", state.tokens.color.tokens]];
+    FAMILIES.forEach(function (f) { if (state.tokens[f] && state.tokens[f].tokens) groups.push([f, state.tokens[f].tokens]); });
+    groups.forEach(function (g) {
+      var list = g[1].filter(function (t) { return !q || t.name.toLowerCase().indexOf(q) > -1; }); if (!list.length) return;
+      var h = document.createElement("div"); h.className = "tgroup"; h.textContent = g[0] === "color" ? "color · " + state.theme : g[0]; box.appendChild(h);
+      list.forEach(function (t) {
+        var orig = g[0] === "color" ? colorOf(t, state.theme) : (typeof t.value === "string" ? t.value : (t.value[state.theme] != null ? t.value[state.theme] : t.value[state.themes[0]]));
+        var row = document.createElement("div"); row.className = "trow"; var cur = currentVal(g[0], t);
+        var sw = document.createElement("div"); sw.className = "sw"; sw.style.background = g[0] === "color" ? cur : "transparent";
+        if (g[0] === "color" && isHex(cur.slice(0, 7))) { var p = document.createElement("input"); p.type = "color"; p.value = cur.slice(0, 7); p.setAttribute("aria-label", t.name + " colour"); p.style.cssText = "width:24px;height:24px;padding:0;border:0;background:none"; sw = p; }
+        var nm = document.createElement("div"); nm.className = "nm"; nm.textContent = t.name; nm.title = t.name + (t.usage ? " — " + t.usage : "");
+        var tx = document.createElement("input"); tx.type = "text"; tx.value = cur; tx.setAttribute("aria-label", t.name + " value"); tx.spellcheck = false;
+        if (cur !== orig) row.classList.add("changed");
+        function commit(v) { tx.value = v; if (sw.style && sw.tagName !== "INPUT") sw.style.background = v; setOverride(g[0], t.name, v, orig); row.classList.toggle("changed", v !== orig); }
+        tx.addEventListener("input", function () { commit(tx.value.trim()); });
+        if (sw.tagName === "INPUT") sw.addEventListener("input", function () { var a = tx.value.length === 9 ? tx.value.slice(7) : ""; commit(sw.value + a); });
+        row.appendChild(sw); row.appendChild(nm); row.appendChild(tx); box.appendChild(row);
+      });
+    });
+  }
+  $("tokenFilter").addEventListener("input", buildTokenEditor);
+  $("resetTokens").addEventListener("click", function () { state.overrides = {}; applyAllFrames(); buildTokenEditor(); updateCount(); });
+  $("copyCss").addEventListener("click", function () { var css = overrideCss() || "/* no edits */"; (navigator.clipboard ? navigator.clipboard.writeText(css) : Promise.reject()).then(function () { setStatus("CSS copied", "live"); }, function () { prompt("Copy this CSS:", css); }); });
+  $("downloadJson").addEventListener("click", function () {
+    var t = JSON.parse(JSON.stringify(state.tokens));
+    t.color.tokens.forEach(function (tok) {
+      state.themes.forEach(function (th) { var o = (state.overrides[th] || {})[tok.name]; if (o == null) return; if (typeof tok.value === "string") { var base = tok.value; tok.value = {}; state.themes.forEach(function (x) { tok.value[x] = base; }); } tok.value[th] = o; });
+    });
+    var all = state.overrides["*"] || {};
+    FAMILIES.forEach(function (f) { if (t[f] && t[f].tokens) t[f].tokens.forEach(function (tok) { if (all[tok.name] != null) tok.value = all[tok.name]; }); });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(t, null, 2) + "\n"], { type: "application/json" })); a.download = state.sys + "-tokens.json"; a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+
+  /* ---------- live reload: poll the files ---------- */
+  var timer = 0;
+  function setStatus(msg, kind) { $("status").textContent = msg; var d = $("dot"); d.className = "dot" + (kind ? " " + kind : ""); }
+  function watched() { var b = state.base; return [b + "tokens.css", b + "tokens.json", b + "components/bundle.css", b + "components/bundle.js", b + "components/Cover/preview.html"].concat(state.comps.map(function (c) { return b + c.src; })); }
+  function pollNow(seed) {
+    if (isFile || !state.auto && !seed) return Promise.resolve();
+    var files = watched();
+    return Promise.all(files.map(function (u) { return fetchText(u, true).then(function (t) { return [u, hash(t)]; }, function () { return [u, "missing"]; }); })).then(function (rs) {
+      var shared = false, changedPreviews = [], tokensChanged = false;
+      rs.forEach(function (r) {
+        var old = state.hashes[r[0]]; state.hashes[r[0]] = r[1];
+        if (old === undefined || old === r[1]) return;
+        if (/\/preview\.html$/.test(r[0])) changedPreviews.push(r[0]); else { shared = true; if (/tokens\.json$/.test(r[0])) tokensChanged = true; }
+      });
+      if (shared) {
+        var p = tokensChanged ? fetchText(state.base + "tokens.json", true).then(function (t) { state.tokens = JSON.parse(t); buildTokenEditor(); }) : Promise.resolve();
+        p.then(function () { document.querySelectorAll("iframe").forEach(loadFrame); });
+        setStatus("Reloaded shared files · " + new Date().toLocaleTimeString(), "flash"); setTimeout(function () { setStatus("Live · checked " + new Date().toLocaleTimeString(), "live"); }, 1500);
+      } else if (changedPreviews.length) {
+        changedPreviews.forEach(function (u) { var rel = u.slice(state.base.length); document.querySelectorAll("iframe").forEach(function (f) { if (f.getAttribute("data-src") === rel) loadFrame(f); }); });
+        setStatus("Reloaded " + changedPreviews.length + " preview(s) · " + new Date().toLocaleTimeString(), "flash"); setTimeout(function () { setStatus("Live · checked " + new Date().toLocaleTimeString(), "live"); }, 1500);
+      } else setStatus((state.auto ? "Live" : "Paused") + " · checked " + new Date().toLocaleTimeString(), state.auto ? "live" : "");
+    });
+  }
+  function schedule() { clearInterval(timer); if (!isFile) timer = setInterval(function () { if (state.auto && !document.hidden) pollNow(false); }, 1500); }
+  $("auto").addEventListener("change", function () { state.auto = $("auto").checked; if (state.auto) pollNow(true); else setStatus("Paused", ""); });
+  $("reloadAll").addEventListener("click", function () { document.querySelectorAll("iframe").forEach(loadFrame); });
+
+  /* ---------- go ---------- */
+  schedule();
+  if (isFile) { $("fileNotice").hidden = false; setStatus("Read-only: serve over http for live updates", ""); }
+  var start = location.hash.slice(1) || SYSTEMS[0].id;
+  if (!SYSTEMS.some(function (s) { return s.id === start; })) { SYSTEMS.push({ id: start, name: start }); var o2 = document.createElement("option"); o2.value = start; o2.textContent = start; sel.insertBefore(o2, other); }
+  loadSystem(start);
+})();
+</script>
+</body>
+</html>
