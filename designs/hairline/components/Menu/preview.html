@@ -1,0 +1,19 @@
+<!-- @dsCard group="Navigation" height=330 subtitle="Nav dropdown with groups" -->
+<!doctype html>
+<html data-theme="light">
+<head><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Menu</title>
+<style>body{padding:24px;box-sizing:border-box;background:var(--surface)} </style></head>
+<body>
+<div class="hl-menu">
+  <button class="hl-menu__trigger" aria-expanded="true" aria-controls="m1">Product</button>
+  <div class="hl-menu__panel" id="m1">
+    <div class="hl-menu__group">Plan</div>
+    <a class="hl-menu__item" href="#"><span class="hl-orb hl-orb--sm"></span><span>Timelines<small>Dates that move together</small></span></a>
+    <a class="hl-menu__item" href="#"><span class="hl-orb hl-orb--sm hl-orb--green"></span><span>Goals<small>Progress you can see</small></span></a>
+    <div class="hl-menu__group">Run</div>
+    <a class="hl-menu__item" href="#"><span class="hl-orb hl-orb--sm hl-orb--coral"></span><span>Requests<small>One queue for every ask</small></span></a>
+    <a class="hl-menu__item" href="#"><span class="hl-orb hl-orb--sm hl-orb--purple"></span><span>Reports<small>Status that writes itself</small></span></a>
+  </div>
+</div>
+<script>Hairline.init();</script>
+</body></html>

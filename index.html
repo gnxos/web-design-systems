@@ -49,12 +49,17 @@
     <div class="meta"><h2>Cirrus</h2><small>Inter Tight · Light / Dark</small><p>White pages, one vivid blue, pill buttons and sky-gradient cards with frosted glass; words that blur into place.</p></div>
   </a>
 
+  <a class="card" href="designs/hairline/">
+    <div class="frame"><iframe title="Hairline cover" src="designs/hairline/components/Cover/preview.html" tabindex="-1"></iframe></div>
+    <div class="meta"><h2>Hairline</h2><small>Albert Sans · Light / Dark</small><p>Ink on white, thin display type and pill buttons, with work graphs of floating update cards and glowing orbs joined by hairlines.</p></div>
+  </a>
+
   <footer>Prompts for using these or making new ones: <a href="prompts/use-a-design-system.md">use a design system</a> · <a href="prompts/create-from-website.md">create one from a website</a>.</footer>
 </div>
 <script>
   function fit() {
     document.querySelectorAll(".frame").forEach(function (f) {
-      var s = Math.min(1, f.clientWidth / 960);
+      var s = f.clientWidth / 960;
       f.querySelector("iframe").style.transform = "scale(" + s + ")";
       f.style.height = (288 * s) + "px";
     });
