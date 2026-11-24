@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hairline design system</title>
+<style>
+  :root { color-scheme: light; --bg:#f6f6f4; --fg:#161616; --muted:#5b5b5b; --line:#e2e2de; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:32px 16px 64px; }
+  .top { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; }
+  .top a { color:var(--fg); }
+  h1 { margin:0; font-size:32px; letter-spacing:-0.02em; }
+  p.lede { color:var(--muted); max-width:720px; }
+  nav.links { display:flex; flex-wrap:wrap; gap:14px; font-size:14px; }
+  .themes { display:flex; gap:6px; }
+  .themes button { font:inherit; font-size:13px; padding:6px 12px; border-radius:999px; border:1px solid var(--line); background:#fff; cursor:pointer; }
+  .themes button[aria-pressed="true"] { background:var(--fg); color:#fff; border-color:var(--fg); }
+  .cover { margin:24px 0; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:#fff; }
+  .cover iframe { display:block; width:960px; height:288px; border:0; transform-origin:0 0; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:16px; margin:16px 0; overflow:hidden; }
+  .card header { display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; padding:12px 16px; border-bottom:1px solid var(--line); }
+  .card h2 { margin:0; font-size:16px; }
+  .card header span { color:var(--muted); font-size:13px; flex:1; }
+  .card header a { font-size:13px; color:var(--fg); }
+  .card iframe { display:block; width:100%; border:0; }
+  a:focus-visible, button:focus-visible { outline:2px solid var(--fg); outline-offset:2px; }
+</style></head>
+<body><div class="wrap">
+  <div class="top"><a href="../../index.html">← All design systems</a><div class="themes"><button data-theme-btn="light">Light</button><button data-theme-btn="dark">Dark</button></div></div>
+  <h1>Hairline</h1>
+  <p class="lede">Near-black ink on white, airy light-weight display type, pill buttons, one red-to-pink gradient phrase and pastel highlighter labels. Its pictures are work graphs: floating update cards and glowing orbs joined by 1px hairlines.</p>
+  <nav class="links"><a href="README.md">Brand book</a><a href="imagery.md">Imagery guide</a><a href="motion.md">Motion guide</a><a href="tokens.json">tokens.json</a><a href="tokens.css">tokens.css</a><a href="components/bundle.css">bundle.css</a><a href="components/bundle.js">bundle.js</a><a href="assets/">Images</a></nav>
+  <div class="cover" id="cover"><iframe title="Cover" data-src="components/Cover/preview.html"></iframe></div>
+  <section class="card"><header><h2>Avatar</h2><span>Content · Glow orbs in four colours and three sizes</span><a href="components/Avatar/README.md">Guidelines</a></header><iframe loading="lazy" title="Avatar preview" data-src="components/Avatar/preview.html" style="height:204px"></iframe></section><section class="card"><header><h2>Button</h2><span>Actions · Primary, secondary, outline, nav size, disabled</span><a href="components/Button/README.md">Guidelines</a></header><iframe loading="lazy" title="Button preview" data-src="components/Button/preview.html" style="height:164px"></iframe></section><section class="card"><header><h2>Callout</h2><span>Content · Floating update cards, with entrance motion</span><a href="components/Callout/README.md">Guidelines</a></header><iframe loading="lazy" title="Callout preview" data-src="components/Callout/preview.html" style="height:194px"></iframe></section><section class="card"><header><h2>Card</h2><span>Content · Outlined card on white; raised card on the dark band</span><a href="components/Card/README.md">Guidelines</a></header><iframe loading="lazy" title="Card preview" data-src="components/Card/preview.html" style="height:354px"></iframe></section><section class="card"><header><h2>Headline</h2><span>Content · Hero headline with a gradient phrase, plus a section heading</span><a href="components/Headline/README.md">Guidelines</a></header><iframe loading="lazy" title="Headline preview" data-src="components/Headline/preview.html" style="height:364px"></iframe></section><section class="card"><header><h2>Menu</h2><span>Navigation · Nav dropdown with groups</span><a href="components/Menu/README.md">Guidelines</a></header><iframe loading="lazy" title="Menu preview" data-src="components/Menu/preview.html" style="height:354px"></iframe></section><section class="card"><header><h2>NavBar</h2><span>Navigation · Transparent header with plain-type wordmark</span><a href="components/NavBar/README.md">Guidelines</a></header><iframe loading="lazy" title="NavBar preview" data-src="components/NavBar/preview.html" style="height:124px"></iframe></section><section class="card"><header><h2>PillTabs</h2><span>Navigation · Switcher on the dark band, with panels</span><a href="components/PillTabs/README.md">Guidelines</a></header><iframe loading="lazy" title="PillTabs preview" data-src="components/PillTabs/preview.html" style="height:354px"></iframe></section><section class="card"><header><h2>ProofStrip</h2><span>Content · One stat beside a row of marks</span><a href="components/ProofStrip/README.md">Guidelines</a></header><iframe loading="lazy" title="ProofStrip preview" data-src="components/ProofStrip/preview.html" style="height:194px"></iframe></section><section class="card"><header><h2>Tag</h2><span>Content · Uppercase tags, pastel labels, inline marker</span><a href="components/Tag/README.md">Guidelines</a></header><iframe loading="lazy" title="Tag preview" data-src="components/Tag/preview.html" style="height:174px"></iframe></section><section class="card"><header><h2>TextField</h2><span>Forms · Email capture with inline submit, and an error</span><a href="components/TextField/README.md">Guidelines</a></header><iframe loading="lazy" title="TextField preview" data-src="components/TextField/preview.html" style="height:274px"></iframe></section><section class="card"><header><h2>WorkGraph</h2><span>Imagery · Hero canvas: callouts and orbs joined by hairlines</span><a href="components/WorkGraph/README.md">Guidelines</a></header><iframe loading="lazy" title="WorkGraph preview" data-src="components/WorkGraph/preview.html" style="height:624px"></iframe></section>
+</div>
+<script>
+(function () {
+  var theme = "light";
+  function load() {
+    document.querySelectorAll("iframe[data-src]").forEach(function (f) { f.src = f.getAttribute("data-src") + "?theme=" + theme; });
+    document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-theme-btn") === theme ? "true" : "false"); });
+  }
+  document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.addEventListener("click", function () { theme = b.getAttribute("data-theme-btn"); load(); }); });
+  function fitCover() {
+    var c = document.getElementById("cover"); if (!c) return;
+    var f = c.querySelector("iframe"), s = c.clientWidth / 960;
+    f.style.transform = "scale(" + s + ")"; c.style.height = (288 * s) + "px";
+  }
+  window.addEventListener("resize", fitCover); fitCover(); load();
+})();
+</script>
+</body></html>

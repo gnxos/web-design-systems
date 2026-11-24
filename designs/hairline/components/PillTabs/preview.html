@@ -1,0 +1,19 @@
+<!-- @dsCard group="Navigation" height=330 subtitle="Switcher on the dark band, with panels" -->
+<!doctype html>
+<html data-theme="light">
+<head><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>PillTabs</title>
+<style>body{padding:24px;box-sizing:border-box;background:var(--surface)} body{padding:16px} .hl-band{padding:32px} h2{margin:0 0 24px;font-size:32px;line-height:1.05;font-weight:300;letter-spacing:-0.6px;color:var(--text-on-band)} .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}</style></head>
+<body>
+<div class="hl-band">
+  <h2>One map for every kind of team</h2>
+  <div class="hl-pilltabs" role="tablist" aria-label="Views">
+    <button class="hl-pilltab" role="tab" aria-selected="true" aria-controls="p1">Projects</button>
+    <button class="hl-pilltab" role="tab" aria-selected="false" aria-controls="p2">Requests</button>
+    <button class="hl-pilltab" role="tab" aria-selected="false" aria-controls="p3">Portfolios</button>
+  </div>
+  <div class="hl-tabpanel two" id="p1" role="tabpanel"><article class="hl-card hl-card--band"><h3 class="hl-card__title">Timelines</h3><p class="hl-card__body">Dates shift together when one slips.</p></article><article class="hl-card hl-card--band"><h3 class="hl-card__title">Owners</h3><p class="hl-card__body">Every step has a name next to it.</p></article></div>
+  <div class="hl-tabpanel two" id="p2" role="tabpanel" hidden><article class="hl-card hl-card--band"><h3 class="hl-card__title">Intake</h3><p class="hl-card__body">One form, routed to the right queue.</p></article><article class="hl-card hl-card--band"><h3 class="hl-card__title">Triage</h3><p class="hl-card__body">Sort by urgency, not by who asked loudest.</p></article></div>
+  <div class="hl-tabpanel two" id="p3" role="tabpanel" hidden><article class="hl-card hl-card--band"><h3 class="hl-card__title">Health</h3><p class="hl-card__body">See what is on track at a glance.</p></article><article class="hl-card hl-card--band"><h3 class="hl-card__title">Capacity</h3><p class="hl-card__body">Spot who has room before you assign.</p></article></div>
+</div>
+<script>Hairline.init();</script>
+</body></html>

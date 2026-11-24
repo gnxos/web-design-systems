@@ -1,0 +1,36 @@
+<!-- @dsCard group="Imagery" height=600 subtitle="Hero canvas: callouts and orbs joined by hairlines" -->
+<!doctype html>
+<html data-theme="light">
+<head><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WorkGraph</title>
+<style>body{padding:24px;box-sizing:border-box;background:var(--surface)} body{padding:0}</style></head>
+<body>
+<div class="hl-graph" data-hl-draw aria-label="Example work graph: four updates connected to one shared plan" role="img">
+  <svg class="hl-graph__wires" viewBox="0 0 960 540" aria-hidden="true">
+    <path class="hl-wire" d="M0 200 H230 V120"/>
+    <path class="hl-wire" d="M480 290 V200 H230"/>
+    <path class="hl-wire" d="M480 290 H660 V150 H720"/>
+    <path class="hl-wire" d="M480 290 V360 H250 V420"/>
+    <path class="hl-wire" d="M480 330 V470 H730 V410"/>
+    <path class="hl-wire" d="M730 470 H960"/>
+    <circle class="hl-node" cx="480" cy="200" r="5"/><circle class="hl-node" cx="230" cy="200" r="5"/>
+    <circle class="hl-node" cx="660" cy="150" r="5"/><circle class="hl-node" cx="480" cy="360" r="5"/>
+    <circle class="hl-node" cx="250" cy="360" r="5"/><circle class="hl-node" cx="480" cy="470" r="5"/>
+    <circle class="hl-node" cx="730" cy="470" r="5"/>
+    <circle class="hl-node hl-node--live" cx="660" cy="290" r="5"/>
+  </svg>
+  <div class="hl-graph__item" style="left:50%;top:53.7%"><span class="hl-orb hl-orb--purple hl-orb--lg" data-live></span></div>
+  <div class="hl-graph__item hl-float" style="left:24%;top:22%">
+    <div class="hl-callout"><span class="hl-orb hl-orb--sm"></span><div><span class="hl-label hl-label--mint">Release planner</span><p class="hl-callout__text">Moved the beta to <strong>Thursday</strong> and told three owners.</p></div></div>
+  </div>
+  <div class="hl-graph__item hl-float" style="left:76%;top:28%">
+    <div class="hl-callout"><span class="hl-orb hl-orb--sm hl-orb--coral"></span><div><span class="hl-label hl-label--blush">Budget review</span><p class="hl-callout__text">Two line items need a sign-off before Friday.</p></div></div>
+  </div>
+  <div class="hl-graph__item hl-float" data-hl-optional style="left:26%;top:78%">
+    <div class="hl-callout"><span class="hl-orb hl-orb--sm hl-orb--green"></span><div><span class="hl-label hl-label--sky">Field notes</span><p class="hl-callout__text">Twelve site visits, summarised into one brief.</p></div></div>
+  </div>
+  <div class="hl-graph__item hl-float" data-hl-optional style="left:76%;top:76%">
+    <div class="hl-callout"><div><span class="hl-label hl-label--highlighter">Handoff</span><p class="hl-callout__text">Designs are ready for <strong>engineering review</strong>.</p></div></div>
+  </div>
+</div>
+<script>Hairline.init();</script>
+</body></html>

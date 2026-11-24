@@ -1,0 +1,48 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);})();</script>
+<meta charset="utf-8">
+<title>Hairline</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--surface); color:var(--text-strong); font-family:var(--font-sans); overflow:hidden; padding:0; }
+  .cover { position:relative; width:960px; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+  .red { fill:var(--gradient-red); } .pink { fill:var(--gradient-pink); } .fuch { fill:var(--orchid); }
+  .ink { fill:var(--text-strong); } .coral { fill:var(--coral); }
+  .wire { fill:none; stroke:var(--text-strong); stroke-width:1px; }
+  .node { fill:var(--surface); stroke:var(--text-strong); stroke-width:2px; }
+  .words { position:absolute; left:var(--space-4); bottom:var(--space-4); max-width:440px; }
+  .name { margin:0; font-size:96px; line-height:.95; font-weight:300; letter-spacing:-2.4px; color:var(--text-strong); }
+  .tagline { margin:var(--space-2) 0 0 4px; font-size:14px; line-height:20px; color:var(--text-weak); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!-- Pill rows in the accent palette, ink taking the longest bar; one hairline connector with node discs steps through the gutters. -->
+<rect class="red"   x="16"  y="24"  width="192" height="48" rx="24"/>
+<rect class="fuch"  x="224" y="24"  width="288" height="48" rx="24"/>
+<rect class="ink"   x="96"  y="88"  width="416" height="48" rx="24"/>
+<rect class="pink"  x="16"  y="152" width="128" height="48" rx="24"/>
+<rect class="coral" x="160" y="152" width="208" height="48" rx="24"/>
+<rect class="fuch"  x="56"  y="216" width="200" height="48" rx="24"/>
+<rect class="red"   x="272" y="216" width="96"  height="48" rx="24"/>
+<path class="wire" d="M0 80 H200 V144 H384 V208 H480"/>
+<circle class="node" cx="64"  cy="80"  r="6"/>
+<circle class="node" cx="200" cy="80"  r="6"/>
+<circle class="node" cx="200" cy="144" r="6"/>
+<circle class="node" cx="384" cy="144" r="6"/>
+<circle class="node" cx="384" cy="208" r="6"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Hairline</h1>
+<p class="tagline">Ink on white, light display type, pills, one bright phrase.</p>
+</div>
+</div>
+</body>
+</html>
