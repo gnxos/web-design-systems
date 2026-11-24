@@ -1,6 +1,6 @@
-# Web Design Systems
+# Fitting Room
 
-Six complete, brand-neutral design systems: tokens, brand books, illustration/imagery and motion guides, live components and original image kits. Each one is ready to drop into a web project or hand to an AI agent as a style guide.
+Fitting Room is a set of six complete, brand-neutral design systems: tokens, brand books, illustration/imagery and motion guides, live components and original image kits. Each one is ready to drop into a web project or hand to an AI agent as a style guide.
 
 | System | Look | Fonts | Themes |
 | --- | --- | --- | --- |
