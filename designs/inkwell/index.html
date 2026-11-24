@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inkwell design system</title>
+<style>
+  :root { color-scheme: light; --bg:#f6f6f4; --fg:#161616; --muted:#5b5b5b; --line:#e2e2de; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:32px 16px 64px; }
+  .top { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; }
+  .top a { color:var(--fg); }
+  h1 { margin:0; font-size:32px; letter-spacing:-0.02em; }
+  p.lede { color:var(--muted); max-width:720px; }
+  nav.links { display:flex; flex-wrap:wrap; gap:14px; font-size:14px; }
+  .themes { display:flex; gap:6px; }
+  .themes button { font:inherit; font-size:13px; padding:6px 12px; border-radius:999px; border:1px solid var(--line); background:#fff; cursor:pointer; }
+  .themes button[aria-pressed="true"] { background:var(--fg); color:#fff; border-color:var(--fg); }
+  .cover { margin:24px 0; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:#fff; }
+  .cover iframe { display:block; width:960px; height:288px; border:0; transform-origin:0 0; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:16px; margin:16px 0; overflow:hidden; }
+  .card header { display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; padding:12px 16px; border-bottom:1px solid var(--line); }
+  .card h2 { margin:0; font-size:16px; }
+  .card header span { color:var(--muted); font-size:13px; flex:1; }
+  .card header a { font-size:13px; color:var(--fg); }
+  .card iframe { display:block; width:100%; border:0; }
+  a:focus-visible, button:focus-visible { outline:2px solid var(--fg); outline-offset:2px; }
+</style></head>
+<body><div class="wrap">
+  <div class="top"><a href="../../index.html">← All design systems</a><div class="themes"><button data-theme-btn="light">Light</button><button data-theme-btn="dark">Dark</button></div></div>
+  <h1>Inkwell</h1>
+  <p class="lede">Black ink on paper, a soft powder blue and hand-drawn doodles. Rounded colour blocks, heavy wide headlines, ink-line illustrations with flat fills, gently spinning and bobbing confetti.</p>
+  <nav class="links"><a href="README.md">Brand book</a><a href="illustration.md">Illustration guide</a><a href="motion.md">Motion guide</a><a href="tokens.json">tokens.json</a><a href="tokens.css">tokens.css</a><a href="components/bundle.css">bundle.css</a><a href="components/bundle.js">bundle.js</a><a href="assets/">Images</a></nav>
+  <div class="cover" id="cover"><iframe title="Cover" data-src="components/Cover/preview.html"></iframe></div>
+  <section class="card"><header><h2>AskBar</h2><span>Inputs · AI prompt with glow and sparkle</span><a href="components/AskBar/README.md">Guidelines</a></header><iframe loading="lazy" title="AskBar preview" data-src="components/AskBar/preview.html" style="height:224px"></iframe></section><section class="card"><header><h2>Button</h2><span>Actions · Primary, outline, header pair, link</span><a href="components/Button/README.md">Guidelines</a></header><iframe loading="lazy" title="Button preview" data-src="components/Button/preview.html" style="height:244px"></iframe></section><section class="card"><header><h2>Confetti</h2><span>Illustration · Hero confetti, in motion</span><a href="components/Confetti/README.md">Guidelines</a></header><iframe loading="lazy" title="Confetti preview" data-src="components/Confetti/preview.html" style="height:444px"></iframe></section><section class="card"><header><h2>Doodles</h2><span>Illustration · The doodle kit</span><a href="components/Doodles/README.md">Guidelines</a></header><iframe loading="lazy" title="Doodles preview" data-src="components/Doodles/preview.html" style="height:584px"></iframe></section><section class="card"><header><h2>FeatureCard</h2><span>Layout · 3-up fog cards with doodles</span><a href="components/FeatureCard/README.md">Guidelines</a></header><iframe loading="lazy" title="FeatureCard preview" data-src="components/FeatureCard/preview.html" style="height:444px"></iframe></section><section class="card"><header><h2>Highlight</h2><span>Emphasis · Powder box, sketchy border</span><a href="components/Highlight/README.md">Guidelines</a></header><iframe loading="lazy" title="Highlight preview" data-src="components/Highlight/preview.html" style="height:264px"></iframe></section><section class="card"><header><h2>ProductCard</h2><span>Layout · Paper card on powder</span><a href="components/ProductCard/README.md">Guidelines</a></header><iframe loading="lazy" title="ProductCard preview" data-src="components/ProductCard/preview.html" style="height:444px"></iframe></section><section class="card"><header><h2>Scribble</h2><span>Emphasis · Ellipse and underline, drawn on</span><a href="components/Scribble/README.md">Guidelines</a></header><iframe loading="lazy" title="Scribble preview" data-src="components/Scribble/preview.html" style="height:354px"></iframe></section><section class="card"><header><h2>SectionBlock</h2><span>Layout · Powder · Ink · Fog blocks</span><a href="components/SectionBlock/README.md">Guidelines</a></header><iframe loading="lazy" title="SectionBlock preview" data-src="components/SectionBlock/preview.html" style="height:584px"></iframe></section><section class="card"><header><h2>Stat</h2><span>Content · Powder numerals on ink</span><a href="components/Stat/README.md">Guidelines</a></header><iframe loading="lazy" title="Stat preview" data-src="components/Stat/preview.html" style="height:254px"></iframe></section>
+</div>
+<script>
+(function () {
+  var theme = "light";
+  function load() {
+    document.querySelectorAll("iframe[data-src]").forEach(function (f) { f.src = f.getAttribute("data-src") + "?theme=" + theme; });
+    document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-theme-btn") === theme ? "true" : "false"); });
+  }
+  document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.addEventListener("click", function () { theme = b.getAttribute("data-theme-btn"); load(); }); });
+  function fitCover() {
+    var c = document.getElementById("cover"); if (!c) return;
+    var f = c.querySelector("iframe"), s = Math.min(1, c.clientWidth / 960);
+    f.style.transform = "scale(" + s + ")"; c.style.height = (288 * s) + "px";
+  }
+  window.addEventListener("resize", fitCover); fitCover(); load();
+})();
+</script>
+</body></html>

@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,100..900&display=swap");
+
+/* Inkwell — component styles. Values come from tokens.css; the fallbacks only cover a frame
+   that has not loaded tokens yet. Never hard-code a colour here without its var(). */
+
+body { margin: 0; font-family: var(--font-sans, "Archivo", Arial, sans-serif); color: var(--ink, #000); background: var(--surface, #fff); -webkit-font-smoothing: antialiased; }
+
+/* Display sizes run slightly wide: Archivo's width axis at 108%. */
+.display-xl, .display-l, .heading-xl, .stat, .ik-display { font-stretch: 108%; letter-spacing: -0.005em; }
+.eyebrow, .button, .ik-eyebrow, .ik-btn--lg { text-transform: uppercase; }
+
+/* ---------- Type helpers (mirror tokens so components work standalone) ---------- */
+.ik-eyebrow { font-size: 20px; line-height: 24px; font-weight: 500; letter-spacing: 0.6px; margin: 0 0 14px; }
+.ik-h-hero { font-size: clamp(40px, 3.75vw, 72px); line-height: 0.96; font-weight: 800; font-stretch: 108%; margin: 0; }
+.ik-h-section { font-size: clamp(34px, 2.92vw, 56px); line-height: 1; font-weight: 800; font-stretch: 108%; margin: 0; }
+.ik-h-card { font-size: clamp(20px, 1.3vw, 25px); line-height: 1.08; font-weight: 700; margin: 0; }
+.ik-lead { font-size: clamp(17px, 1.04vw, 20px); line-height: 1.4; font-weight: 500; margin: 0; }
+.ik-body { font-size: 16px; line-height: 24px; letter-spacing: 0.16px; margin: 0; }
+
+/* ---------- Buttons ---------- */
+.ik-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; font: inherit; text-decoration: none; cursor: pointer; border: 1px solid transparent; border-radius: var(--radius-m, 10px); padding: 0 var(--space-s, 20px); transition: opacity var(--dur-hover, 100ms) linear, background-color var(--dur-hover, 100ms) linear, color var(--dur-hover, 100ms) linear; }
+.ik-btn--lg { min-width: 272px; height: 60px; font-size: 20px; font-weight: 500; letter-spacing: 0.6px; }
+.ik-btn--sm { padding: var(--space-xs, 12px) var(--space-s, 20px); font-size: 14px; letter-spacing: 0.28px; }
+.ik-btn--primary { background: var(--ink, #000); color: var(--surface, #fff); }
+.ik-btn--primary:hover { opacity: var(--opacity-hover, 0.8); }
+.ik-btn--outline { background: transparent; color: var(--ink, #000); border-color: var(--line-strong, #000); }
+.ik-btn--outline:hover { background: var(--ink, #000); color: var(--surface, #fff); }
+.ik-btn--nav { padding: var(--space-2xs, 8px) var(--space-s, 20px); border-radius: var(--radius-s, 8px); font-size: 16px; line-height: 24px; letter-spacing: 0.16px; background: transparent; color: var(--ink, #000); border-color: var(--line-strong, #000); }
+.ik-btn--nav:hover { background: var(--ink, #000); color: var(--surface, #fff); }
+.ik-btn:focus-visible, .ik-link:focus-visible, .ik-ask input:focus-visible { outline: 2px solid var(--focus, #000); outline-offset: 2px; }
+.ik-link { color: var(--ink, #000); font-size: 20px; font-weight: 500; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.ik-link::after { content: " \2192"; }
+.ik-link:hover { text-decoration-thickness: 2px; }
+
+/* ---------- Section blocks: rounded colour fields inset from the page edge ---------- */
+.ik-page { padding: 0 var(--space-gutter, 20px); display: flex; flex-direction: column; gap: var(--space-gutter, 20px); }
+.ik-block { position: relative; overflow: hidden; border-radius: var(--radius-l, 20px); padding: var(--space-section, 136px) var(--space-gutter, 20px); background: var(--surface, #fff); color: var(--ink, #000); }
+.ik-block--powder { background: var(--powder, #bfd9e3); color: var(--on-powder, #000); }
+.ik-block--fog { background: var(--surface-fog, #f5f5f5); }
+.ik-block--ink { background: #000; color: #fff; } /* prefer data-theme="dark" on the block; this is the no-token fallback */
+.ik-block[data-theme] { background: var(--surface); color: var(--ink); }
+.ik-block__inner { position: relative; z-index: 1; max-width: var(--content-max, 1480px); margin: 0 auto; }
+.ik-block--compact { padding-top: 48px; padding-bottom: 48px; }
+
+/* ---------- Feature card (3-up, fog) ---------- */
+.ik-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-gutter, 20px); }
+.ik-card { box-sizing: border-box; background: var(--surface-fog, #f5f5f5); border: 1px solid var(--line, #ccc); border-radius: var(--radius-l, 20px); padding: var(--space-card, 50px); display: flex; flex-direction: column; gap: 16px; }
+.ik-card__art { height: 140px; display: flex; align-items: center; }
+.ik-card__art img, .ik-card__art svg { max-height: 100%; max-width: 100%; }
+
+/* ---------- Product card (paper card on powder, sticky-stacking) ---------- */
+.ik-product { box-sizing: border-box; background: var(--surface, #fff); border-radius: var(--radius-l, 20px); padding: var(--space-card, 50px); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.ik-product__pane { background: var(--powder, #bfd9e3); border-radius: var(--radius-l, 20px); min-height: 220px; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.ik-product .ik-eyebrow { font-size: 14px; margin-bottom: 6px; }
+@media (max-width: 720px) { .ik-product { grid-template-columns: 1fr; padding: 28px; } }
+.ik-stack { position: sticky; top: 90px; transform-origin: 50% 0; }
+@supports (animation-timeline: view()) {
+  .ik-stack { animation: ik-recede linear both; animation-timeline: view(); animation-range: exit-crossing 0% exit-crossing 60%; animation-timing-function: var(--ease-stack, cubic-bezier(0.22, 0.6, 0.36, 1)); }
+}
+@keyframes ik-recede { to { transform: scale(0.95); opacity: var(--opacity-recede, 0.5); } }
+
+/* ---------- Emphasis: scribbles and the highlight box ---------- */
+.ik-scribble { position: relative; display: inline-block; white-space: nowrap; }
+.ik-scribble > svg { position: absolute; pointer-events: none; overflow: visible; }
+.ik-scribble--ellipse > svg { left: -9%; top: -30%; width: 118%; height: 158%; }
+.ik-scribble--underline > svg { left: -3%; bottom: -0.32em; width: 106%; height: 0.42em; }
+.ik-scribble path { fill: none; stroke: var(--scribble-ink, var(--ink, #000)); stroke-width: var(--stroke-scribble, 3.3px); stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.ik-scribble--paper { --scribble-ink: #fff; }
+.ik-scribble--powder { --scribble-ink: var(--powder, #bfd9e3); }
+.ik-scribble.is-drawn path, .ik-scribble[data-static] path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.ik-scribble.is-pending path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.ik-scribble.is-drawn path { transition: stroke-dashoffset var(--dur-draw, 1200ms) var(--ease-float, cubic-bezier(0.78, 0, 0.22, 1)); }
+.ik-highlight { position: relative; display: inline-block; line-height: 1.15; margin-top: 0.14em; padding: 0.02em 0.24em 0.06em; margin: 0 0.06em; background: var(--powder, #bfd9e3); color: var(--on-powder, #000); border-radius: var(--radius-m, 10px); }
+.ik-highlight::before { content: ""; position: absolute; inset: -1px; border: 2px solid var(--on-powder, #000); border-radius: var(--radius-m, 10px); filter: url(#ik-rough); }
+
+/* ---------- Stat ---------- */
+.ik-stat { display: flex; flex-direction: column; gap: 6px; }
+.ik-stat__num { font-size: clamp(48px, 4.48vw, 86px); line-height: 1; font-weight: 800; font-stretch: 108%; color: var(--powder, #bfd9e3); }
+.ik-stat__label { font-size: 20px; font-weight: 600; line-height: 1.2; }
+
+/* ---------- AI ask bar ---------- */
+.ik-ask { position: relative; display: flex; align-items: center; gap: 10px; box-sizing: border-box; width: min(100%, 460px); padding: 6px 6px 6px 14px; background: var(--surface, #fff); border: 1px solid var(--powder, #bfd9e3); border-radius: var(--radius-m, 10px); box-shadow: var(--glow-ai, 0 0 0 1px #bfd9e3, 0 0 28px 6px rgba(191,217,227,.85)); }
+.ik-ask input { flex: 1; border: 0; background: transparent; font: inherit; font-size: 14px; color: var(--ink, #000); min-width: 0; }
+.ik-ask input::placeholder { color: #5c5c5c; }
+.ik-ask button { width: 34px; height: 34px; border-radius: 50%; border: 0; background: var(--ink, #000); color: var(--surface, #fff); font-size: 18px; line-height: 1; cursor: pointer; }
+.ik-ask__spark { position: absolute; left: 4px; top: -40px; width: 32px; height: 32px; }
+
+/* ---------- Doodle motion ---------- */
+.ik-doodle { display: inline-block; line-height: 0; }
+.ik-doodle svg { width: 100%; height: auto; display: block; }
+.ik-confetti { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.ik-confetti > * { position: absolute; }
+.ik-spin { animation: ik-spin var(--dur-spin, 10000ms) linear infinite; }
+.ik-bob { animation: ik-bob var(--dur-float, 2000ms) var(--ease-float, cubic-bezier(0.78, 0, 0.22, 1)) infinite alternate; }
+.ik-sway { animation: ik-sway var(--dur-float, 2000ms) var(--ease-float, cubic-bezier(0.78, 0, 0.22, 1)) infinite alternate; }
+.ik-twinkle { animation: ik-twinkle 1600ms steps(1, end) infinite; }
+@keyframes ik-spin { to { transform: rotate(360deg); } }
+@keyframes ik-bob { from { transform: translateY(0) scaleX(1); } to { transform: translateY(20%) scaleX(0.95); } }
+@keyframes ik-sway { from { transform: translateY(0) scaleX(1) rotate(0deg); } to { transform: translateY(5%) scaleX(0.9) rotate(7deg); } }
+@keyframes ik-twinkle { 0% { opacity: 1; transform: scale(1); } 30% { opacity: 0.35; transform: scale(0.82); } 45% { opacity: 1; transform: scale(1.06); } 70% { opacity: 0.7; transform: scale(0.94); } }
+
+/* Scroll-linked rise: the block drifts up into place as it crosses the viewport. */
+.ik-rise { --rise: 20%; }
+@supports (animation-timeline: view()) {
+  .ik-rise { animation: ik-rise linear both; animation-timeline: view(); animation-range: entry-crossing 0% exit-crossing 0%; animation-timing-function: var(--ease-scroll, cubic-bezier(0.4, 0.2, 0.2, 1)); }
+  .ik-rise--10 { --rise: 10%; } .ik-rise--30 { --rise: 30%; }
+}
+@supports not (animation-timeline: view()) {
+  .ik-rise { transform: translateY(40px); opacity: 0; transition: transform 900ms var(--ease-scroll, cubic-bezier(0.4, 0.2, 0.2, 1)), opacity 900ms linear; }
+  .ik-rise.is-in { transform: none; opacity: 1; }
+}
+@keyframes ik-rise { from { transform: translateY(var(--rise)); } to { transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ik-spin, .ik-bob, .ik-sway, .ik-twinkle, .ik-rise, .ik-stack { animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; }
+  .ik-scribble path { transition: none !important; stroke-dashoffset: 0 !important; }
+}

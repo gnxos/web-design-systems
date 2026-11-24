@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afterglow design system</title>
+<style>
+  :root { color-scheme: light; --bg:#f6f6f4; --fg:#161616; --muted:#5b5b5b; --line:#e2e2de; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:32px 16px 64px; }
+  .top { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; }
+  .top a { color:var(--fg); }
+  h1 { margin:0; font-size:32px; letter-spacing:-0.02em; }
+  p.lede { color:var(--muted); max-width:720px; }
+  nav.links { display:flex; flex-wrap:wrap; gap:14px; font-size:14px; }
+  .themes { display:flex; gap:6px; }
+  .themes button { font:inherit; font-size:13px; padding:6px 12px; border-radius:999px; border:1px solid var(--line); background:#fff; cursor:pointer; }
+  .themes button[aria-pressed="true"] { background:var(--fg); color:#fff; border-color:var(--fg); }
+  .cover { margin:24px 0; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:#fff; }
+  .cover iframe { display:block; width:960px; height:288px; border:0; transform-origin:0 0; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:16px; margin:16px 0; overflow:hidden; }
+  .card header { display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; padding:12px 16px; border-bottom:1px solid var(--line); }
+  .card h2 { margin:0; font-size:16px; }
+  .card header span { color:var(--muted); font-size:13px; flex:1; }
+  .card header a { font-size:13px; color:var(--fg); }
+  .card iframe { display:block; width:100%; border:0; }
+  a:focus-visible, button:focus-visible { outline:2px solid var(--fg); outline-offset:2px; }
+</style></head>
+<body><div class="wrap">
+  <div class="top"><a href="../../index.html">← All design systems</a><div class="themes"><button data-theme-btn="dark">Dark</button><button data-theme-btn="light">Light</button></div></div>
+  <h1>Afterglow</h1>
+  <p class="lede">A dark bento-grid interface lit by grainy ember, teal and sand gradient fields. Exact Geist type, terminal panels, node graphs and pixel numerals for data-heavy, developer-facing products.</p>
+  <nav class="links"><a href="README.md">Brand book</a><a href="imagery.md">Imagery guide</a><a href="motion.md">Motion guide</a><a href="tokens.json">tokens.json</a><a href="tokens.css">tokens.css</a><a href="components/bundle.css">bundle.css</a><a href="components/bundle.js">bundle.js</a><a href="assets/">Images</a></nav>
+  <div class="cover" id="cover"><iframe title="Cover" data-src="components/Cover/preview.html"></iframe></div>
+  <section class="card"><header><h2>Button</h2><span>Actions · Primary, secondary, ghost, small, link</span><a href="components/Button/README.md">Guidelines</a></header><iframe loading="lazy" title="Button preview" data-src="components/Button/preview.html" style="height:194px"></iframe></section><section class="card"><header><h2>Chip</h2><span>Actions · Tags, states, outline chips, live dot</span><a href="components/Chip/README.md">Guidelines</a></header><iframe loading="lazy" title="Chip preview" data-src="components/Chip/preview.html" style="height:144px"></iframe></section><section class="card"><header><h2>DataCard</h2><span>Content · Key/value facts over a field</span><a href="components/DataCard/README.md">Guidelines</a></header><iframe loading="lazy" title="DataCard preview" data-src="components/DataCard/preview.html" style="height:244px"></iframe></section><section class="card"><header><h2>FeatureCard</h2><span>Content · Icon box, title, text, link</span><a href="components/FeatureCard/README.md">Guidelines</a></header><iframe loading="lazy" title="FeatureCard preview" data-src="components/FeatureCard/preview.html" style="height:284px"></iframe></section><section class="card"><header><h2>Hero</h2><span>Layout · Dusk field, headline, data card</span><a href="components/Hero/README.md">Guidelines</a></header><iframe loading="lazy" title="Hero preview" data-src="components/Hero/preview.html" style="height:544px"></iframe></section><section class="card"><header><h2>ListRows</h2><span>Content · Hairline-separated rows in a tile</span><a href="components/ListRows/README.md">Guidelines</a></header><iframe loading="lazy" title="ListRows preview" data-src="components/ListRows/preview.html" style="height:344px"></iframe></section><section class="card"><header><h2>NodeGraph</h2><span>Content · Hub, nodes, legend</span><a href="components/NodeGraph/README.md">Guidelines</a></header><iframe loading="lazy" title="NodeGraph preview" data-src="components/NodeGraph/preview.html" style="height:424px"></iframe></section><section class="card"><header><h2>SectionHeader</h2><span>Layout · Eyebrow + heading-1 + body strip</span><a href="components/SectionHeader/README.md">Guidelines</a></header><iframe loading="lazy" title="SectionHeader preview" data-src="components/SectionHeader/preview.html" style="height:194px"></iframe></section><section class="card"><header><h2>StatTile</h2><span>Content · Pixel numerals on sand, ember, panel</span><a href="components/StatTile/README.md">Guidelines</a></header><iframe loading="lazy" title="StatTile preview" data-src="components/StatTile/preview.html" style="height:304px"></iframe></section><section class="card"><header><h2>Terminal</h2><span>Content · Transcript with line-in reveal</span><a href="components/Terminal/README.md">Guidelines</a></header><iframe loading="lazy" title="Terminal preview" data-src="components/Terminal/preview.html" style="height:384px"></iframe></section><section class="card"><header><h2>Tile</h2><span>Layout · Panel, ember, teal, warm, sand</span><a href="components/Tile/README.md">Guidelines</a></header><iframe loading="lazy" title="Tile preview" data-src="components/Tile/preview.html" style="height:444px"></iframe></section>
+</div>
+<script>
+(function () {
+  var theme = "dark";
+  function load() {
+    document.querySelectorAll("iframe[data-src]").forEach(function (f) { f.src = f.getAttribute("data-src") + "?theme=" + theme; });
+    document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-theme-btn") === theme ? "true" : "false"); });
+  }
+  document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.addEventListener("click", function () { theme = b.getAttribute("data-theme-btn"); load(); }); });
+  function fitCover() {
+    var c = document.getElementById("cover"); if (!c) return;
+    var f = c.querySelector("iframe"), s = Math.min(1, c.clientWidth / 960);
+    f.style.transform = "scale(" + s + ")"; c.style.height = (288 * s) + "px";
+  }
+  window.addEventListener("resize", fitCover); fitCover(); load();
+})();
+</script>
+</body></html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halftone design system</title>
+<style>
+  :root { color-scheme: light; --bg:#f6f6f4; --fg:#161616; --muted:#5b5b5b; --line:#e2e2de; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:32px 16px 64px; }
+  .top { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; }
+  .top a { color:var(--fg); }
+  h1 { margin:0; font-size:32px; letter-spacing:-0.02em; }
+  p.lede { color:var(--muted); max-width:720px; }
+  nav.links { display:flex; flex-wrap:wrap; gap:14px; font-size:14px; }
+  .themes { display:flex; gap:6px; }
+  .themes button { font:inherit; font-size:13px; padding:6px 12px; border-radius:999px; border:1px solid var(--line); background:#fff; cursor:pointer; }
+  .themes button[aria-pressed="true"] { background:var(--fg); color:#fff; border-color:var(--fg); }
+  .cover { margin:24px 0; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:#fff; }
+  .cover iframe { display:block; width:960px; height:288px; border:0; transform-origin:0 0; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:16px; margin:16px 0; overflow:hidden; }
+  .card header { display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; padding:12px 16px; border-bottom:1px solid var(--line); }
+  .card h2 { margin:0; font-size:16px; }
+  .card header span { color:var(--muted); font-size:13px; flex:1; }
+  .card header a { font-size:13px; color:var(--fg); }
+  .card iframe { display:block; width:100%; border:0; }
+  a:focus-visible, button:focus-visible { outline:2px solid var(--fg); outline-offset:2px; }
+</style></head>
+<body><div class="wrap">
+  <div class="top"><a href="../../index.html">← All design systems</a><div class="themes"><button data-theme-btn="light">Light</button><button data-theme-btn="dark">Dark</button></div></div>
+  <h1>Halftone</h1>
+  <p class="lede">Cool grey and white with one electric pink, warm people photography under frosted glass, pink dot-matrix graphics, pill controls and uppercase mono labels.</p>
+  <nav class="links"><a href="README.md">Brand book</a><a href="imagery.md">Imagery guide</a><a href="motion.md">Motion guide</a><a href="tokens.json">tokens.json</a><a href="tokens.css">tokens.css</a><a href="components/bundle.css">bundle.css</a><a href="components/bundle.js">bundle.js</a><a href="assets/">Images</a></nav>
+  <div class="cover" id="cover"><iframe title="Cover" data-src="components/Cover/preview.html"></iframe></div>
+  <section class="card"><header><h2>Button</h2><span>Actions · Pink, white, ink, ghost, arrow</span><a href="components/Button/README.md">Guidelines</a></header><iframe loading="lazy" title="Button preview" data-src="components/Button/preview.html" style="height:224px"></iframe></section><section class="card"><header><h2>DotSphere</h2><span>Graphics · Live sphere cropped by a card</span><a href="components/DotSphere/README.md">Guidelines</a></header><iframe loading="lazy" title="DotSphere preview" data-src="components/DotSphere/preview.html" style="height:284px"></iframe></section><section class="card"><header><h2>Eyebrow</h2><span>Typography · Slash marker, shimmer, section header</span><a href="components/Eyebrow/README.md">Guidelines</a></header><iframe loading="lazy" title="Eyebrow preview" data-src="components/Eyebrow/preview.html" style="height:224px"></iframe></section><section class="card"><header><h2>FeatureCard</h2><span>Content · Text, plus-list, stat, photo with UI cards</span><a href="components/FeatureCard/README.md">Guidelines</a></header><iframe loading="lazy" title="FeatureCard preview" data-src="components/FeatureCard/preview.html" style="height:454px"></iframe></section><section class="card"><header><h2>GlassCards</h2><span>Content · Clear glass over a photo, scanlines</span><a href="components/GlassCards/README.md">Guidelines</a></header><iframe loading="lazy" title="GlassCards preview" data-src="components/GlassCards/preview.html" style="height:444px"></iframe></section><section class="card"><header><h2>HalftoneGlow</h2><span>Graphics · Dot-grid glow; pixel-mosaic glow</span><a href="components/HalftoneGlow/README.md">Guidelines</a></header><iframe loading="lazy" title="HalftoneGlow preview" data-src="components/HalftoneGlow/preview.html" style="height:384px"></iframe></section><section class="card"><header><h2>Hero</h2><span>Layout · Photo hero with scrim, rating, ticker</span><a href="components/Hero/README.md">Guidelines</a></header><iframe loading="lazy" title="Hero preview" data-src="components/Hero/preview.html" style="height:544px"></iframe></section><section class="card"><header><h2>NavPill</h2><span>Navigation · Black floating pill</span><a href="components/NavPill/README.md">Guidelines</a></header><iframe loading="lazy" title="NavPill preview" data-src="components/NavPill/preview.html" style="height:144px"></iframe></section><section class="card"><header><h2>NewsTicker</h2><span>Content · Glass pill with scrolling text</span><a href="components/NewsTicker/README.md">Guidelines</a></header><iframe loading="lazy" title="NewsTicker preview" data-src="components/NewsTicker/preview.html" style="height:164px"></iframe></section><section class="card"><header><h2>StatCard</h2><span>Content · Number + mint tag; pink with glass bubbles</span><a href="components/StatCard/README.md">Guidelines</a></header><iframe loading="lazy" title="StatCard preview" data-src="components/StatCard/preview.html" style="height:354px"></iframe></section><section class="card"><header><h2>TabPills</h2><span>Navigation · Numbered pills, pink selected</span><a href="components/TabPills/README.md">Guidelines</a></header><iframe loading="lazy" title="TabPills preview" data-src="components/TabPills/preview.html" style="height:134px"></iframe></section><section class="card"><header><h2>Tag</h2><span>Content · Lavender, mint, butter, ink, line, smoke</span><a href="components/Tag/README.md">Guidelines</a></header><iframe loading="lazy" title="Tag preview" data-src="components/Tag/preview.html" style="height:194px"></iframe></section><section class="card"><header><h2>Testimonial</h2><span>Content · Slate metric, quote, name + role chips</span><a href="components/Testimonial/README.md">Guidelines</a></header><iframe loading="lazy" title="Testimonial preview" data-src="components/Testimonial/preview.html" style="height:264px"></iframe></section>
+</div>
+<script>
+(function () {
+  var theme = "light";
+  function load() {
+    document.querySelectorAll("iframe[data-src]").forEach(function (f) { f.src = f.getAttribute("data-src") + "?theme=" + theme; });
+    document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-theme-btn") === theme ? "true" : "false"); });
+  }
+  document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.addEventListener("click", function () { theme = b.getAttribute("data-theme-btn"); load(); }); });
+  function fitCover() {
+    var c = document.getElementById("cover"); if (!c) return;
+    var f = c.querySelector("iframe"), s = Math.min(1, c.clientWidth / 960);
+    f.style.transform = "scale(" + s + ")"; c.style.height = (288 * s) + "px";
+  }
+  window.addEventListener("resize", fitCover); fitCover(); load();
+})();
+</script>
+</body></html>

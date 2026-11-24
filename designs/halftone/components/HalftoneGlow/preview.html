@@ -1,0 +1,18 @@
+<!-- @dsCard group="Graphics" height=360 subtitle="Dot-grid glow; pixel-mosaic glow" -->
+<!doctype html>
+<html data-theme="light">
+<head><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{padding:20px;box-sizing:border-box}body{background:#fff}</style></head>
+<body>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div class="ht-card ht-card--ink" style="height:300px;border-radius:40px;padding:28px">
+  <canvas data-ht-halftone style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+  <h3 class="ht-h2" style="position:relative;font-size:32px">Research that <span class="ht-accent">compounds</span></h3>
+</div>
+<div class="ht-card" style="height:300px;border-radius:40px;padding:28px;background:#000 url(../../assets/Graphics/pixel-glow.svg) left bottom/cover;color:#fff;justify-content:flex-end">
+  <span style="font-size:52px;letter-spacing:-0.04em;line-height:1">workspace</span><span class="ht-small" style="color:#ffffff99">Work that actually ships.</span>
+</div></div>
+<script>Halftone.init();</script>
+</body>
+</html>

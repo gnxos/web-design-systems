@@ -1,0 +1,189 @@
+/* Afterglow — generated from tokens.json */
+
+:root, [data-theme="dark"] {
+  --canvas: #0a0a0a;
+  --panel: #141414;
+  --raised: #1a1a1a;
+  --ground: #050505;
+  --ink: #f5f5f5;
+  --muted: #a3a3a3;
+  --faint: #8a8a8a;
+  --border: #222222;
+  --border-strong: #303030;
+  --hover: #191919;
+  --active: #222222;
+  --selected: #ffffff12;
+  --signal: #d63c02;
+  --signal-ink: #ff8a57;
+  --signal-soft: #3a1a0c;
+  --on-signal: #ffffff;
+  --success: #4f9aa8;
+  --success-ink: #7cc4d0;
+  --success-soft: #0f2a2e;
+  --danger: #d9707a;
+  --danger-ink: #e8939a;
+  --danger-soft: #33191b;
+  --ember: #eb4304;
+  --coral: #dc8360;
+  --sand: #ceb8ad;
+  --teal: #236571;
+  --slate: #2e2f34;
+  --charcoal: #191919;
+  --paper: #fcfcfc;
+  --mist: #e4e4e4;
+  --series-1: #eb4304;
+  --series-2: #4f9aa8;
+  --series-3: #ceb8ad;
+  --series-4: #a3a3a3;
+  --series-other: #5c5c5c;
+  --avatar-1: #dc8360;
+  --avatar-2: #ceb8ad;
+  --avatar-3: #4f9aa8;
+  --avatar-4: #8fc0c7;
+  --avatar-5: #8c8f99;
+  --avatar-6: #e8a98e;
+  --avatar-7: #b39a8c;
+  --avatar-8: #7f97a3;
+  --on-avatar: #141414;
+  --scrim: #00000080;
+  --term-bg: #0f0f0f;
+  --term-panel: #141416;
+  --term-border: #2a2a2a;
+  --term-ink: #f2f2f2;
+  --term-muted: #a3a3a3;
+  --term-faint: #76767e;
+  --focus: #f5f5f5;
+  --shadow-edge: 0 1px 1px #0000004d;
+  --shadow-btn: 0 0 0 1px #363636, 0 1px 1px #0000004d;
+  --shadow-panel: 0 0 0 1px #282828, 0 1px 2px #0000004d;
+  --shadow-floating: 0 1px 2px -1px #0000004d, 0 4px 10px -3px #00000073, 0 2px 4px -2px #0000004d;
+  --shadow-floating-lg: 0 2px 4px -2px #00000059, 0 12px 28px -8px #00000099, 0 4px 10px -4px #00000059;
+  --shadow-dock: 0 -6px 16px -8px #00000080, 0 -2px 4px -2px #0000004d;
+  --shadow-highlight: inset 0 1px 0 #ffffff1f;
+}
+
+[data-theme="light"] {
+  --canvas: #ffffff;
+  --panel: #ffffff;
+  --raised: #ffffff;
+  --ground: #f7f7f7;
+  --ink: #111111;
+  --muted: #525252;
+  --faint: #6b6b6b;
+  --border: #e8e8e8;
+  --border-strong: #d4d4d4;
+  --hover: #f4f4f4;
+  --active: #ececec;
+  --selected: #1919190f;
+  --signal: #d63c02;
+  --signal-ink: #b83503;
+  --signal-soft: #fbe4d9;
+  --on-signal: #ffffff;
+  --success: #236571;
+  --success-ink: #1d5a65;
+  --success-soft: #dcebed;
+  --danger: #a83a45;
+  --danger-ink: #93303a;
+  --danger-soft: #f4e1e2;
+  --series-1: #eb4304;
+  --series-2: #236571;
+  --series-3: #a9806c;
+  --series-4: #525252;
+  --series-other: #c4c4c4;
+  --avatar-1: #a9522f;
+  --avatar-2: #7d6457;
+  --avatar-3: #236571;
+  --avatar-4: #3a7883;
+  --avatar-5: #4a4c55;
+  --avatar-6: #8f4527;
+  --avatar-7: #66544a;
+  --avatar-8: #46606c;
+  --on-avatar: #ffffff;
+  --scrim: #19191947;
+  --focus: #111111;
+  --shadow-edge: 0 1px 1px #0000000f;
+  --shadow-btn: 0 0 0 1px #d1d1d1, 0 1px 1px #0000000f;
+  --shadow-panel: 0 0 0 1px #e4e4e4, 0 1px 2px #0000000a;
+  --shadow-floating: 0 1px 2px -1px #00000014, 0 4px 10px -3px #00000024, 0 2px 4px -2px #00000014;
+  --shadow-floating-lg: 0 2px 4px -2px #0000001a, 0 12px 28px -8px #00000038, 0 4px 10px -4px #0000001f;
+  --shadow-dock: 0 -6px 16px -8px #0000002e, 0 -2px 4px -2px #0000001a;
+}
+
+:root {
+  --space-px: 1px;
+  --space-0\.5: 2px;
+  --space-1: 4px;
+  --space-1\.5: 6px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+  --control-xs: 24px;
+  --control-sm: 28px;
+  --control-md: 32px;
+  --control-lg: 40px;
+  --row: 36px;
+  --row-lg: 56px;
+  --header: 44px;
+  --topbar-mobile: 48px;
+  --sidebar: 240px;
+  --sidebar-rail: 56px;
+  --icon-sm: 14px;
+  --icon-md: 16px;
+  --content-max: 1440px;
+  --section-pad-top: 80px;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-press: 140ms;
+  --duration-overlay: 180ms;
+  --duration-drawer: 220ms;
+  --duration-meter: 300ms;
+  --duration-line-in: 320ms;
+  --z-sticky: 10;
+  --z-shell: 20;
+  --z-popover: 30;
+  --z-overlay: 40;
+  --z-modal: 50;
+  --z-toast: 100;
+  --z-palette: 200;
+  --z-tooltip: 300;
+  --opacity-disabled: 0.4;
+  --opacity-grain: 0.6;
+  --scale-press: 0.97;
+  --scale-pop: 0.96;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+  --font-pixel: "Geist Pixel Square", "Geist Mono", ui-monospace, monospace;
+}
+.display { font-family: var(--font-sans); font-size: 88px; line-height: 86px; font-weight: 500; letter-spacing: -3.96px; }
+.heading-1 { font-family: var(--font-sans); font-size: 56px; line-height: 60px; font-weight: 500; letter-spacing: -1.96px; }
+.heading-2 { font-family: var(--font-sans); font-size: 44px; line-height: 48px; font-weight: 500; letter-spacing: -1.54px; }
+.heading-3 { font-family: var(--font-sans); font-size: 32px; line-height: 38px; font-weight: 500; }
+.title { font-family: var(--font-sans); font-size: 20px; line-height: 28px; font-weight: 500; letter-spacing: -0.36px; }
+.title-s { font-family: var(--font-sans); font-size: 15px; line-height: 24px; font-weight: 500; letter-spacing: -0.154px; }
+.body-l { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 400; }
+.body { font-family: var(--font-sans); font-size: 14px; line-height: 22px; font-weight: 400; letter-spacing: -0.154px; }
+.body-s { font-family: var(--font-sans); font-size: 13px; line-height: 20px; font-weight: 400; letter-spacing: -0.154px; }
+.caption { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 400; }
+.eyebrow { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 1.68px; }
+.badge { font-family: var(--font-sans); font-size: 11px; line-height: 16px; font-weight: 500; letter-spacing: -0.154px; }
+.button { font-family: var(--font-sans); font-size: 14px; line-height: 22px; font-weight: 500; letter-spacing: -0.084px; }
+.button-s { font-family: var(--font-sans); font-size: 13px; line-height: 22px; font-weight: 500; letter-spacing: -0.078px; }
+.code { font-family: var(--font-mono); font-size: 13px; line-height: 20px; font-weight: 400; }
+.code-strong { font-family: var(--font-mono); font-size: 13px; line-height: 20px; font-weight: 600; }
+.code-s { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 400; }
+.stat-xl { font-family: var(--font-pixel); font-size: 72px; line-height: 72px; font-weight: 500; letter-spacing: -2.88px; }
+.stat { font-family: var(--font-pixel); font-size: 44px; line-height: 48px; font-weight: 500; letter-spacing: -1.54px; }

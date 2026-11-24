@@ -1,0 +1,34 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html data-theme="light">
+<head><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);})();</script><meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 960px; height: 288px; overflow: hidden; background: var(--canvas, #ffffff); }
+  .cv { position: relative; width: 960px; height: 288px; }
+  .cv svg { position: absolute; inset: 0; }
+  .pink { fill: var(--pink, #fb64fa); } .lav { fill: var(--lavender, #e7def8); } .mint { fill: var(--mint, #a1f7c7); } .inkb { fill: var(--ink, #0f0f0f); }
+  .card { rx: var(--radius-lg, 40px); }
+  .cut { fill: var(--canvas, #ffffff); }
+  .txt { position: absolute; left: 40px; bottom: 40px; max-width: 440px; }
+  .name { margin: 0; font-family: var(--font-sans, "Hanken Grotesk", Arial, sans-serif); font-weight: 400; font-size: 88px; line-height: 0.92; letter-spacing: -0.05em; color: var(--ink, #0f0f0f); }
+  .tagline { margin: 14px 0 0; font-family: var(--font-sans, "Hanken Grotesk", Arial, sans-serif); font-size: 14px; line-height: 20px; color: var(--ink-secondary, #5c6b7f); }
+</style></head>
+<body>
+<div class="cv">
+  <svg viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
+    <!--
+      blocks: pink 240x272 slab (radius-lg 40), ink 172x150 (radius-lg), lavender pill 200x76 (rx 38 = half), mint 120x120 (radius-lg) — pink leads as the one loud colour
+      arrangement: tall pink slab bleeding off the top, ink block bleeding off the right, a lavender pill and a mint square below; all right of x=480, gaps space-5 20px
+      pattern: literal motif — the system's halftone: a 36px dot grid cut out of the pink slab, dots swelling toward its lower-left like the halftone glow; 36 dots
+      scales: radius-lg 40px, radius-pill, gaps space-5 20px
+    -->
+    <rect class="pink card" x="548" y="-40" width="240" height="272"/>
+    <rect class="inkb card" x="808" y="40" width="172" height="150"/>
+    <rect class="lav" x="808" y="210" width="200" height="76" rx="38"/>
+    <rect class="mint card" x="508" y="252" width="120" height="120"/>
+    <circle class="cut" cx="578" cy="30" r="3.2"/><circle class="cut" cx="578" cy="66" r="4.0"/><circle class="cut" cx="578" cy="102" r="4.9"/><circle class="cut" cx="578" cy="138" r="5.7"/><circle class="cut" cx="578" cy="174" r="6.6"/><circle class="cut" cx="578" cy="210" r="7.4"/><circle class="cut" cx="614" cy="30" r="3.1"/><circle class="cut" cx="614" cy="66" r="4.0"/><circle class="cut" cx="614" cy="102" r="4.8"/><circle class="cut" cx="614" cy="138" r="5.6"/><circle class="cut" cx="614" cy="174" r="6.4"/><circle class="cut" cx="614" cy="210" r="7.1"/><circle class="cut" cx="650" cy="30" r="2.9"/><circle class="cut" cx="650" cy="66" r="3.7"/><circle class="cut" cx="650" cy="102" r="4.5"/><circle class="cut" cx="650" cy="138" r="5.2"/><circle class="cut" cx="650" cy="174" r="5.8"/><circle class="cut" cx="650" cy="210" r="6.2"/><circle class="cut" cx="686" cy="30" r="2.5"/><circle class="cut" cx="686" cy="66" r="3.2"/><circle class="cut" cx="686" cy="102" r="3.9"/><circle class="cut" cx="686" cy="138" r="4.5"/><circle class="cut" cx="686" cy="174" r="5.0"/><circle class="cut" cx="686" cy="210" r="5.3"/><circle class="cut" cx="722" cy="30" r="2.0"/><circle class="cut" cx="722" cy="66" r="2.6"/><circle class="cut" cx="722" cy="102" r="3.2"/><circle class="cut" cx="722" cy="138" r="3.7"/><circle class="cut" cx="722" cy="174" r="4.1"/><circle class="cut" cx="722" cy="210" r="4.3"/><circle class="cut" cx="758" cy="30" r="1.5"/><circle class="cut" cx="758" cy="66" r="1.9"/><circle class="cut" cx="758" cy="102" r="2.4"/><circle class="cut" cx="758" cy="138" r="2.9"/><circle class="cut" cx="758" cy="174" r="3.2"/><circle class="cut" cx="758" cy="210" r="3.4"/>
+  </svg>
+  <div class="txt"><p class="name">Halftone</p><p class="tagline">Warm photography, one electric pink and engineered type.</p></div>
+</div>
+</body>
+</html>
