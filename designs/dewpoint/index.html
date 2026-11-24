@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dewpoint design system</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  :root { color-scheme: light; --bg:#f6f7fb; --fg:#121317; --muted:#45474d; --line:#e1e6ec; --card:#fff; }
+  html[data-ui="dark"] { color-scheme: dark; --bg:#0c0d10; --fg:#f8f9fc; --muted:#b2bbc5; --line:#2f3034; --card:#121317; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:24px 16px 64px; }
+  .top { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; margin-bottom:16px; }
+  .top a { color:var(--fg); }
+  .themes { display:flex; gap:6px; }
+  .themes button { font:inherit; font-size:13px; padding:6px 14px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--fg); cursor:pointer; }
+  .themes button[aria-pressed="true"] { background:var(--fg); color:var(--bg); border-color:var(--fg); }
+  .header { position:relative; isolation:isolate; overflow:hidden; border-radius:36px; padding:56px 48px 48px; min-height:260px; display:flex; flex-direction:column; justify-content:space-between; gap:40px; background:linear-gradient(115deg,#0f2f86 0%,#1d4fc4 45%,#3b82f0 100%); color:#fff; }
+  .header img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1; opacity:.9; }
+  .eyebrow { margin:0; font-size:12.5px; line-height:15.5px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; }
+  .header h1 { margin:0; font-weight:450; font-size:clamp(36px,5.6vw,80px); line-height:1.05; letter-spacing:-.02em; max-width:12em; }
+  p.lede { color:var(--muted); max-width:720px; margin:20px 0 8px; }
+  nav.links { display:flex; flex-wrap:wrap; gap:14px; font-size:14px; margin-bottom:8px; }
+  nav.links a { color:var(--fg); }
+  .cover { margin:24px 0; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:var(--card); }
+  .cover iframe { display:block; width:960px; height:288px; border:0; transform-origin:0 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; margin:16px 0; overflow:hidden; }
+  .card header { display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; padding:12px 16px; border-bottom:1px solid var(--line); }
+  .card header h2 { margin:0; font-size:17px; }
+  .card header span { color:var(--muted); font-size:13px; flex:1 1 200px; }
+  .card header a { color:var(--fg); font-size:13px; }
+  .card iframe { display:block; width:100%; border:0; }
+  a:focus-visible, button:focus-visible { outline:2px solid var(--fg); outline-offset:2px; }
+</style></head>
+<body><div class="wrap">
+  <div class="top"><a href="../../index.html">← All design systems</a><div class="themes"><button data-theme-btn="light">Light</button><button data-theme-btn="dark">Dark</button></div></div>
+  <header class="header"><img src="assets/Fields/fleck-field-corner.svg" alt=""><p class="eyebrow">Design system</p><h1>Small tools,<br>steady hands.</h1></header>
+  <p class="lede">A bright, airy system: white space, one near-black ink, soft pill buttons and drifting flecks. Large rounded art tiles with glow rings, and a friendly geometric sans set tight at display sizes.</p>
+  <nav class="links"><a href="README.md">Brand book</a><a href="imagery.md">Imagery guide</a><a href="motion.md">Motion guide</a><a href="accessibility.md">Accessibility</a><a href="tokens.json">tokens.json</a><a href="tokens.css">tokens.css</a><a href="components/bundle.css">bundle.css</a><a href="components/bundle.js">bundle.js</a><a href="assets/">Images</a></nav>
+  <div class="cover" id="cover"><iframe title="Cover" data-src="components/Cover/preview.html"></iframe></div>
+  <section class="card"><header><h2>AnnouncementBar</h2><span>Feedback · 40px strip: badge, message, link, dismiss</span><a href="components/AnnouncementBar/README.md">Guidelines</a></header><iframe loading="lazy" title="AnnouncementBar preview" data-src="components/AnnouncementBar/preview.html" style="height:154px"></iframe></section><section class="card"><header><h2>Button</h2><span>Actions · Primary, secondary, outline, accent, text, compact, states</span><a href="components/Button/README.md">Guidelines</a></header><iframe loading="lazy" title="Button preview" data-src="components/Button/preview.html" style="height:424px"></iframe></section><section class="card"><header><h2>Chip</h2><span>Actions · Neutral, outline, accent, dark and entering chips</span><a href="components/Chip/README.md">Guidelines</a></header><iframe loading="lazy" title="Chip preview" data-src="components/Chip/preview.html" style="height:204px"></iframe></section><section class="card"><header><h2>Dropdown</h2><span>Forms · Compact trigger, 16px menu, keyboard support</span><a href="components/Dropdown/README.md">Guidelines</a></header><iframe loading="lazy" title="Dropdown preview" data-src="components/Dropdown/preview.html" style="height:324px"></iframe></section><section class="card"><header><h2>FeatureBlock</h2><span>Content · Text column left, 36px art tile right</span><a href="components/FeatureBlock/README.md">Guidelines</a></header><iframe loading="lazy" title="FeatureBlock preview" data-src="components/FeatureBlock/preview.html" style="height:544px"></iframe></section><section class="card"><header><h2>Footer</h2><span>Layout · Link columns, dark fleck band, oversized wordmark</span><a href="components/Footer/README.md">Guidelines</a></header><iframe loading="lazy" title="Footer preview" data-src="components/Footer/preview.html" style="height:724px"></iframe></section><section class="card"><header><h2>Hero</h2><span>Layout · Typed headline, fleck field, paired actions</span><a href="components/Hero/README.md">Guidelines</a></header><iframe loading="lazy" title="Hero preview" data-src="components/Hero/preview.html" style="height:584px"></iframe></section><section class="card"><header><h2>MediaTile</h2><span>Content · 36px tiles: glow rings, halo, gradient fields</span><a href="components/MediaTile/README.md">Guidelines</a></header><iframe loading="lazy" title="MediaTile preview" data-src="components/MediaTile/preview.html" style="height:404px"></iframe></section><section class="card"><header><h2>NavBar</h2><span>Layout · 52px sticky bar, pill links, compact actions</span><a href="components/NavBar/README.md">Guidelines</a></header><iframe loading="lazy" title="NavBar preview" data-src="components/NavBar/preview.html" style="height:164px"></iframe></section><section class="card"><header><h2>Newsletter</h2><span>Forms · 36px card with email pill input and primary action</span><a href="components/Newsletter/README.md">Guidelines</a></header><iframe loading="lazy" title="Newsletter preview" data-src="components/Newsletter/preview.html" style="height:364px"></iframe></section><section class="card"><header><h2>PostCard</h2><span>Content · 288px art, 28px title, date and chip; scroll-snap row with arrows</span><a href="components/PostCard/README.md">Guidelines</a></header><iframe loading="lazy" title="PostCard preview" data-src="components/PostCard/preview.html" style="height:584px"></iframe></section><section class="card"><header><h2>SectionHeader</h2><span>Layout · Heading with side action, hairline above</span><a href="components/SectionHeader/README.md">Guidelines</a></header><iframe loading="lazy" title="SectionHeader preview" data-src="components/SectionHeader/preview.html" style="height:354px"></iframe></section>
+</div>
+<script>
+(function () {
+  var theme = "light";
+  function load() {
+    document.documentElement.setAttribute("data-ui", theme);
+    document.querySelectorAll("iframe[data-src]").forEach(function (f) { f.src = f.getAttribute("data-src") + "?theme=" + theme; });
+    document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-theme-btn") === theme ? "true" : "false"); });
+  }
+  document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.addEventListener("click", function () { theme = b.getAttribute("data-theme-btn"); load(); }); });
+  function fitCover() {
+    var c = document.getElementById("cover"); if (!c) return;
+    var f = c.querySelector("iframe"), s = Math.min(1, c.clientWidth / 960);
+    f.style.transform = "scale(" + s + ")"; c.style.height = (288 * s) + "px";
+  }
+  window.addEventListener("resize", fitCover); fitCover(); load();
+})();
+</script>
+</body></html>
