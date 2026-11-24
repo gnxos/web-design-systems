@@ -290,7 +290,7 @@ a{color:var(--accent-text)}
 
 @media (prefers-reduced-motion: reduce) {
   .cr-badge--live::before, .cr-ticker2__track, .cr-term2__line { animation: none !important; opacity: 1 !important; transform: none !important; }
-  .cr-mtile > img, .cr-post__art img { transition: none !important; }
+  .cr-mtile > img, .cr-post__art img, .cr-feat, .cr-feat:hover { transition: none !important; transform: none !important; }
 }
 
 /* Cirrus: vivid blue, sky glass, 2px outlines, blur-in headlines */

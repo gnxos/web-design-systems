@@ -294,7 +294,7 @@ a{color:var(--accent-text)}
 
 @media (prefers-reduced-motion: reduce) {
   .dp-badge--live::before, .dp-ticker2__track, .dp-term2__line { animation: none !important; opacity: 1 !important; transform: none !important; }
-  .dp-mtile > img, .dp-post__art img { transition: none !important; }
+  .dp-mtile > img, .dp-post__art img, .dp-feat, .dp-feat:hover { transition: none !important; transform: none !important; }
 }
 
 /* Dewpoint: airy white, hairlines, pill shapes, flecked glow */

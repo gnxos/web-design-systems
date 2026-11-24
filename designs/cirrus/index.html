@@ -48,7 +48,7 @@
     document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-theme-btn") === theme ? "true" : "false"); });
   }
   document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.addEventListener("click", function () { theme = b.getAttribute("data-theme-btn"); load(); }); });
-  function fitCover() { var c = document.getElementById("cover"); if (!c) return; var f = c.querySelector("iframe"), s = Math.min(1, c.clientWidth / 960); f.style.transform = "scale(" + s + ")"; c.style.height = (288 * s) + "px"; }
+  function fitCover() { var c = document.getElementById("cover"); if (!c) return; var f = c.querySelector("iframe"), s = c.clientWidth / 960; f.style.transform = "scale(" + s + ")"; c.style.height = (288 * s) + "px"; }
   window.addEventListener("resize", fitCover); fitCover(); load();
 })();
 </script>

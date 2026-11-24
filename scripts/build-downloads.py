@@ -11,6 +11,7 @@ SYSTEMS = {
   "afterglow": dict(name="Afterglow", p="ag", ns="Afterglow", theme="dark",  btn="ag-btn ag-btn--primary",            fonts="Geist, Geist Mono"),
   "halftone":  dict(name="Halftone",  p="ht", ns="Halftone",  theme="light", btn="ht-btn ht-btn--pink",               fonts="Hanken Grotesk, Geist Mono"),
   "dewpoint":  dict(name="Dewpoint",  p="dp", ns="Dewpoint",  theme="light", btn="dp-btn dp-btn--primary",            fonts="Figtree, JetBrains Mono"),
+  "hairline":  dict(name="Hairline",  p="hl", ns="Hairline",  theme="light", btn="hl-btn hl-btn--primary",            fonts="Albert Sans"),
   "cirrus":    dict(name="Cirrus",    p="cr", ns="Cirrus",    theme="light", btn="cr-btn",                            fonts="Inter Tight, JetBrains Mono"),
 }
 LICENSE = """FITTING ROOM FREE LAUNCH LICENSE  (draft for review before publishing)

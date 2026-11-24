@@ -248,7 +248,7 @@ body { margin: 0; background: var(--canvas, #fff); color: var(--ink, #0f0f0f); f
 
 @media (prefers-reduced-motion: reduce) {
   .ht-badge--live::before, .ht-ticker2__track, .ht-term2__line { animation: none !important; opacity: 1 !important; transform: none !important; }
-  .ht-mtile > img, .ht-post__art img { transition: none !important; }
+  .ht-mtile > img, .ht-post__art img, .ht-feat, .ht-feat:hover { transition: none !important; transform: none !important; }
 }
 
 /* Halftone: pills, uppercase micro-labels, pink emphasis, frosted glass */

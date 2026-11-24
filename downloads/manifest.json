@@ -1,7 +1,7 @@
 {
   "inkwell": {
     "zip": "downloads/inkwell.zip",
-    "bytes": 83385,
+    "bytes": 83391,
     "files": 81,
     "components": 26,
     "colors": 10,
@@ -25,7 +25,7 @@
   },
   "afterglow": {
     "zip": "downloads/afterglow.zip",
-    "bytes": 68748,
+    "bytes": 68747,
     "files": 63,
     "components": 22,
     "colors": 52,
@@ -49,7 +49,7 @@
   },
   "halftone": {
     "zip": "downloads/halftone.zip",
-    "bytes": 80803,
+    "bytes": 80804,
     "files": 63,
     "components": 23,
     "colors": 28,
@@ -73,7 +73,7 @@
   },
   "dewpoint": {
     "zip": "downloads/dewpoint.zip",
-    "bytes": 110141,
+    "bytes": 110139,
     "files": 76,
     "components": 21,
     "colors": 31,
@@ -96,9 +96,33 @@
       "tokens.json"
     ]
   },
+  "hairline": {
+    "zip": "downloads/hairline.zip",
+    "bytes": 73237,
+    "files": 68,
+    "components": 25,
+    "colors": 66,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "assets": 6,
+    "contents": [
+      "INSTALL.md",
+      "LICENSE.txt",
+      "README.md",
+      "assets",
+      "components",
+      "imagery.md",
+      "index.html",
+      "motion.md",
+      "tokens.css",
+      "tokens.json"
+    ]
+  },
   "cirrus": {
     "zip": "downloads/cirrus.zip",
-    "bytes": 74725,
+    "bytes": 74727,
     "files": 73,
     "components": 23,
     "colors": 41,
@@ -123,12 +147,13 @@
   },
   "all-systems": {
     "zip": "downloads/all-systems.zip",
-    "bytes": 416307,
+    "bytes": 489027,
     "systems": [
       "inkwell",
       "afterglow",
       "halftone",
       "dewpoint",
+      "hairline",
       "cirrus"
     ]
   }

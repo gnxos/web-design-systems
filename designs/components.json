@@ -4,6 +4,7 @@
     "afterglow",
     "halftone",
     "dewpoint",
+    "hairline",
     "cirrus"
   ],
   "types": [
@@ -14,6 +15,7 @@
         "afterglow": "Button",
         "halftone": "Button",
         "dewpoint": "Button",
+        "hairline": "Button",
         "cirrus": "Button"
       },
       "added": []
@@ -25,6 +27,7 @@
         "afterglow": "Chip",
         "halftone": "Tag",
         "dewpoint": "Chip",
+        "hairline": "Tag",
         "cirrus": "Chip"
       },
       "added": [
@@ -39,6 +42,7 @@
         "afterglow": "NavBar",
         "halftone": "NavPill",
         "dewpoint": "NavBar",
+        "hairline": "NavBar",
         "cirrus": "NavBar"
       },
       "added": [
@@ -53,6 +57,7 @@
         "afterglow": "Tabs",
         "halftone": "TabPills",
         "dewpoint": "Tabs",
+        "hairline": "PillTabs",
         "cirrus": "SideTabs"
       },
       "added": [
@@ -68,12 +73,14 @@
         "afterglow": "Banner",
         "halftone": "Banner",
         "dewpoint": "AnnouncementBar",
+        "hairline": "Banner",
         "cirrus": "Banner"
       },
       "added": [
         "inkwell",
         "afterglow",
-        "halftone"
+        "halftone",
+        "hairline"
       ]
     },
     {
@@ -83,10 +90,12 @@
         "afterglow": "Hero",
         "halftone": "Hero",
         "dewpoint": "Hero",
+        "hairline": "Hero",
         "cirrus": "Hero"
       },
       "added": [
-        "inkwell"
+        "inkwell",
+        "hairline"
       ]
     },
     {
@@ -96,6 +105,7 @@
         "afterglow": "SectionHeader",
         "halftone": "Eyebrow",
         "dewpoint": "SectionHeader",
+        "hairline": "Headline",
         "cirrus": "SectionHeader"
       },
       "added": [
@@ -110,9 +120,12 @@
         "afterglow": "FeatureCard",
         "halftone": "FeatureCard",
         "dewpoint": "FeatureBlock",
+        "hairline": "FeatureCard",
         "cirrus": "FeatureCard"
       },
-      "added": []
+      "added": [
+        "hairline"
+      ]
     },
     {
       "type": "MediaTile",
@@ -121,11 +134,13 @@
         "afterglow": "Tile",
         "halftone": "MediaTile",
         "dewpoint": "MediaTile",
+        "hairline": "MediaTile",
         "cirrus": "MediaTile"
       },
       "added": [
         "inkwell",
         "halftone",
+        "hairline",
         "cirrus"
       ]
     },
@@ -136,10 +151,12 @@
         "afterglow": "StatTile",
         "halftone": "StatCard",
         "dewpoint": "Stat",
+        "hairline": "Stat",
         "cirrus": "Stat"
       },
       "added": [
         "dewpoint",
+        "hairline",
         "cirrus"
       ]
     },
@@ -150,12 +167,14 @@
         "afterglow": "Testimonial",
         "halftone": "Testimonial",
         "dewpoint": "Testimonial",
+        "hairline": "Testimonial",
         "cirrus": "Testimonial"
       },
       "added": [
         "inkwell",
         "afterglow",
-        "dewpoint"
+        "dewpoint",
+        "hairline"
       ]
     },
     {
@@ -165,6 +184,7 @@
         "afterglow": "DataCard",
         "halftone": "GlassCards",
         "dewpoint": "Card",
+        "hairline": "Card",
         "cirrus": "GlassCard"
       },
       "added": [
@@ -178,12 +198,14 @@
         "afterglow": "ListRows",
         "halftone": "Table",
         "dewpoint": "Table",
+        "hairline": "Table",
         "cirrus": "DataTable"
       },
       "added": [
         "inkwell",
         "halftone",
-        "dewpoint"
+        "dewpoint",
+        "hairline"
       ]
     },
     {
@@ -193,6 +215,7 @@
         "afterglow": "Dropdown",
         "halftone": "Dropdown",
         "dewpoint": "Dropdown",
+        "hairline": "Menu",
         "cirrus": "Dropdown"
       },
       "added": [
@@ -209,6 +232,7 @@
         "afterglow": "Input",
         "halftone": "Input",
         "dewpoint": "Newsletter",
+        "hairline": "TextField",
         "cirrus": "Input"
       },
       "added": [
@@ -224,12 +248,14 @@
         "afterglow": "Footer",
         "halftone": "Footer",
         "dewpoint": "Footer",
+        "hairline": "Footer",
         "cirrus": "Footer"
       },
       "added": [
         "inkwell",
         "afterglow",
-        "halftone"
+        "halftone",
+        "hairline"
       ]
     },
     {
@@ -239,12 +265,14 @@
         "afterglow": "PostCard",
         "halftone": "PostCard",
         "dewpoint": "PostCard",
+        "hairline": "PostCard",
         "cirrus": "PostCard"
       },
       "added": [
         "inkwell",
         "afterglow",
         "halftone",
+        "hairline",
         "cirrus"
       ]
     },
@@ -255,12 +283,14 @@
         "afterglow": "Ticker",
         "halftone": "NewsTicker",
         "dewpoint": "Ticker",
+        "hairline": "Ticker",
         "cirrus": "Ticker"
       },
       "added": [
         "inkwell",
         "afterglow",
         "dewpoint",
+        "hairline",
         "cirrus"
       ]
     },
@@ -271,12 +301,14 @@
         "afterglow": "Terminal",
         "halftone": "Terminal",
         "dewpoint": "Terminal",
+        "hairline": "Terminal",
         "cirrus": "Terminal"
       },
       "added": [
         "inkwell",
         "halftone",
         "dewpoint",
+        "hairline",
         "cirrus"
       ]
     },
@@ -287,6 +319,7 @@
         "afterglow": "Accordion",
         "halftone": "Accordion",
         "dewpoint": "Accordion",
+        "hairline": "Accordion",
         "cirrus": "Accordion"
       },
       "added": [
@@ -294,6 +327,7 @@
         "afterglow",
         "halftone",
         "dewpoint",
+        "hairline",
         "cirrus"
       ]
     },
@@ -304,6 +338,7 @@
         "afterglow": "Pricing",
         "halftone": "Pricing",
         "dewpoint": "Pricing",
+        "hairline": "Pricing",
         "cirrus": "Pricing"
       },
       "added": [
@@ -311,6 +346,7 @@
         "afterglow",
         "halftone",
         "dewpoint",
+        "hairline",
         "cirrus"
       ]
     }
