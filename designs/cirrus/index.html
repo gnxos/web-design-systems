@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cirrus design system</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  :root { color-scheme: light; --bg:#f5f5f7; --fg:#1d1d1f; --muted:#6f6f6f; --line:#e0e0e0; --card:#fff; }
+  html[data-ui="dark"] { color-scheme: dark; --bg:#000; --fg:#fff; --muted:#a0a0a0; --line:#262626; --card:#0e0e0e; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 "Inter Tight", system-ui, sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:24px 16px 64px; }
+  .top { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; margin-bottom:16px; }
+  .top a { color:var(--fg); }
+  .themes { display:flex; gap:6px; }
+  .themes button { font:inherit; font-size:13px; padding:6px 14px; border-radius:999px; border:2px solid var(--fg); background:transparent; color:var(--fg); cursor:pointer; }
+  .themes button[aria-pressed="true"] { background:var(--fg); color:var(--bg); }
+  .header { position:relative; isolation:isolate; overflow:hidden; border-radius:24px; padding:56px 48px; min-height:340px; display:flex; flex-direction:column; justify-content:space-between; gap:48px; color:#fff; background:#0a4fc7; }
+  .header img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; }
+  .header::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,#00000040,#000000a6); }
+  .eyebrow { margin:0; font-size:13px; line-height:20px; font-weight:600; letter-spacing:.2px; text-transform:uppercase; }
+  .header h1 { margin:0; font-weight:500; font-size:clamp(36px,3.9vw,56px); line-height:1.2; letter-spacing:.15px; max-width:14em; }
+  p.lede { color:var(--muted); max-width:720px; margin:20px 0 8px; }
+  nav.links { display:flex; flex-wrap:wrap; gap:14px; font-size:14px; margin-bottom:8px; }
+  nav.links a { color:var(--fg); }
+  .cover { margin:24px 0; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:var(--card); }
+  .cover iframe { display:block; width:960px; height:288px; border:0; transform-origin:0 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; margin:16px 0; overflow:hidden; }
+  .card header { display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; padding:12px 16px; border-bottom:1px solid var(--line); }
+  .card header h2 { margin:0; font-size:17px; }
+  .card header span { color:var(--muted); font-size:13px; flex:1 1 200px; }
+  .card header a { color:var(--fg); font-size:13px; }
+  .card iframe { display:block; width:100%; border:0; }
+  a:focus-visible, button:focus-visible { outline:2px solid #0f62fe; outline-offset:2px; }
+</style></head>
+<body><div class="wrap">
+  <div class="top"><a href="../../index.html">← All design systems</a><div class="themes"><button data-theme-btn="light">Light</button><button data-theme-btn="dark">Dark</button></div></div>
+  <header class="header"><img src="assets/Skies/sky-day.svg" alt=""><p class="eyebrow">Design system</p><h1>Calm tools for crowded calendars.</h1></header>
+  <p class="lede">A bright, confident system: white pages, one vivid blue, pill buttons, soft sky-gradient cards with frosted glass, and a black closing section. Words resolve into place, one at a time.</p>
+  <nav class="links"><a href="README.md">Brand book</a><a href="imagery.md">Imagery guide</a><a href="motion.md">Motion guide</a><a href="accessibility.md">Accessibility</a><a href="tokens.json">tokens.json</a><a href="tokens.css">tokens.css</a><a href="components/bundle.css">bundle.css</a><a href="components/bundle.js">bundle.js</a><a href="assets/">Images</a></nav>
+  <div class="cover" id="cover"><iframe title="Cover" data-src="components/Cover/preview.html"></iframe></div>
+  <section class="card"><header><h2>Banner</h2><span>Feedback · Dark streak banner with email capture</span><a href="components/Banner/README.md">Guidelines</a></header><iframe loading="lazy" title="Banner preview" data-src="components/Banner/preview.html" style="height:254px"></iframe></section><section class="card"><header><h2>BlurText</h2><span>Motion · Word-by-word blur-in, 0.8s with 0.15s stagger</span><a href="components/BlurText/README.md">Guidelines</a></header><iframe loading="lazy" title="BlurText preview" data-src="components/BlurText/preview.html" style="height:354px"></iframe></section><section class="card"><header><h2>Button</h2><span>Actions · Primary, glass, outline, trailing-dot, link, states</span><a href="components/Button/README.md">Guidelines</a></header><iframe loading="lazy" title="Button preview" data-src="components/Button/preview.html" style="height:494px"></iframe></section><section class="card"><header><h2>DataTable</h2><span>Content · Role chips with avatars, tabular figures</span><a href="components/DataTable/README.md">Guidelines</a></header><iframe loading="lazy" title="DataTable preview" data-src="components/DataTable/preview.html" style="height:354px"></iframe></section><section class="card"><header><h2>FeatureCard</h2><span>Content · 40px tall cards: sky art, frosted panel, trailing-dot button</span><a href="components/FeatureCard/README.md">Guidelines</a></header><iframe loading="lazy" title="FeatureCard preview" data-src="components/FeatureCard/preview.html" style="height:664px"></iframe></section><section class="card"><header><h2>Footer</h2><span>Layout · Black footer: lead, link columns, oversized wordmark</span><a href="components/Footer/README.md">Guidelines</a></header><iframe loading="lazy" title="Footer preview" data-src="components/Footer/preview.html" style="height:664px"></iframe></section><section class="card"><header><h2>GlassCard</h2><span>Content · Frosted 24px cards with stat or quote over sky art</span><a href="components/GlassCard/README.md">Guidelines</a></header><iframe loading="lazy" title="GlassCard preview" data-src="components/GlassCard/preview.html" style="height:444px"></iframe></section><section class="card"><header><h2>Hero</h2><span>Layout · 24px field, blur-in headline, glass and trailing-dot actions</span><a href="components/Hero/README.md">Guidelines</a></header><iframe loading="lazy" title="Hero preview" data-src="components/Hero/preview.html" style="height:644px"></iframe></section><section class="card"><header><h2>InsightCard</h2><span>Content · White mock-up cards: status line, reason tags, 12-week squares</span><a href="components/InsightCard/README.md">Guidelines</a></header><iframe loading="lazy" title="InsightCard preview" data-src="components/InsightCard/preview.html" style="height:444px"></iframe></section><section class="card"><header><h2>NavBar</h2><span>Layout · 43px utility strip, 66px sticky bar</span><a href="components/NavBar/README.md">Guidelines</a></header><iframe loading="lazy" title="NavBar preview" data-src="components/NavBar/preview.html" style="height:254px"></iframe></section><section class="card"><header><h2>SideTabs</h2><span>Layout · Sticky uppercase tabs with scroll-linked underline</span><a href="components/SideTabs/README.md">Guidelines</a></header><iframe loading="lazy" title="SideTabs preview" data-src="components/SideTabs/preview.html" style="height:324px"></iframe></section><section class="card"><header><h2>Testimonial</h2><span>Content · 219px portrait, company mark, quote, name and role</span><a href="components/Testimonial/README.md">Guidelines</a></header><iframe loading="lazy" title="Testimonial preview" data-src="components/Testimonial/preview.html" style="height:354px"></iframe></section>
+</div>
+<script>
+(function () {
+  var theme = "light";
+  function load() {
+    document.documentElement.setAttribute("data-ui", theme);
+    document.querySelectorAll("iframe[data-src]").forEach(function (f) { f.src = f.getAttribute("data-src") + "?theme=" + theme; });
+    document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-theme-btn") === theme ? "true" : "false"); });
+  }
+  document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.addEventListener("click", function () { theme = b.getAttribute("data-theme-btn"); load(); }); });
+  function fitCover() { var c = document.getElementById("cover"); if (!c) return; var f = c.querySelector("iframe"), s = Math.min(1, c.clientWidth / 960); f.style.transform = "scale(" + s + ")"; c.style.height = (288 * s) + "px"; }
+  window.addEventListener("resize", fitCover); fitCover(); load();
+})();
+</script>
+</body></html>

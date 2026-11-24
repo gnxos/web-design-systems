@@ -1,6 +1,6 @@
 # Web Design Systems
 
-Four complete, brand-neutral design systems: tokens, brand books, illustration/imagery and motion guides, live components and original image kits. Each one is ready to drop into a web project or hand to an AI agent as a style guide.
+Five complete, brand-neutral design systems: tokens, brand books, illustration/imagery and motion guides, live components and original image kits. Each one is ready to drop into a web project or hand to an AI agent as a style guide.
 
 | System | Look | Fonts | Themes |
 | --- | --- | --- | --- |
@@ -8,6 +8,7 @@ Four complete, brand-neutral design systems: tokens, brand books, illustration/i
 | [**Afterglow**](designs/afterglow/) | Dark bento tiles lit by grainy ember/teal/sand gradients, terminals and node graphs | Geist, Geist Mono | Dark, Light |
 | [**Halftone**](designs/halftone/) | Cool grey and white, one electric pink, warm photography under frosted glass, dot-matrix graphics | Hanken Grotesk, Geist Mono | Light, Dark |
 | [**Dewpoint**](designs/dewpoint/) | Bright white space, near-black ink, soft pill buttons, drifting confetti flecks and glow-ring art tiles | Figtree, JetBrains Mono | Light, Dark |
+| [**Cirrus**](designs/cirrus/) | White pages, one vivid blue, pill buttons, sky-gradient cards with frosted glass, blur-in words, a black closing section | Inter Tight, IBM Plex Mono | Light, Dark |
 | [**Hairline**](designs/hairline/) | Ink on white, thin display type, pill buttons, one gradient phrase, pastel highlighter labels, work graphs of floating cards and glowing orbs | Albert Sans | Light, Dark |
 
 All fonts are free (Google Fonts) and load from each system's `components/bundle.css`. Every image in the repo is original.
@@ -22,7 +23,7 @@ All fonts are free (Google Fonts) and load from each system's `components/bundle
 ```
 designs/<name>/
 ├── README.md            brand book: voice, colour, type, layout, states, imagery — start here
-├── illustration.md      (Inkwell) or imagery.md (Afterglow, Halftone, Dewpoint): how to draw or generate every picture
+├── illustration.md      (Inkwell) or imagery.md (Afterglow, Halftone, Dewpoint, Cirrus): how to draw or generate every picture
 ├── motion.md            every animation, with exact timings and easing curves
 ├── tokens.json          source of truth: colours per theme, type scale, spacing, radii, shadows, motion
 ├── tokens.css           the same tokens as CSS custom properties + one class per type style
@@ -30,7 +31,7 @@ designs/<name>/
 ├── assets/<group>/      original SVG kit (doodles, gradient fields, dot graphics, work graphs) + notes
 └── components/
     ├── bundle.css       component styles (loads the Google Fonts)
-    ├── bundle.js        small helpers exposed as window.Inkwell / Afterglow / Halftone / Dewpoint/ Hairline
+    ├── bundle.js        small helpers exposed as window.Inkwell / Afterglow / Halftone / Dewpoint/ Hairline/ Cirrus
     └── <Component>/     README.md (usage rules) + preview.html (live example)
 ```
 
