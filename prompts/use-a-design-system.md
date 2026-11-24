@@ -4,7 +4,7 @@ Paste this into a chat with an agent that can read this repo, and fill in the br
 
 ```text
 Build <what you want: a landing page, a dashboard, a slide, an email…> using the design system in
-designs/<inkwell | afterglow | halftone>/ of this repo.
+designs/<inkwell | afterglow | halftone | hairline>/ of this repo.
 
 - Read its README.md first, then tokens.json, its imagery/illustration guide and motion.md.
 - Load tokens.css, components/bundle.css and components/bundle.js, and build from its components

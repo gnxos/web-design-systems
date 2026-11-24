@@ -1,0 +1,22 @@
+<!-- @dsCard group="Content" height=330 subtitle="Outlined card on white; raised card on the dark band" -->
+<!doctype html>
+<html data-theme="light">
+<head><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Card</title>
+<style>body{padding:24px;box-sizing:border-box;background:var(--surface)} .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start} .band{background:var(--surface-band);border-radius:var(--radius-xl);padding:24px} .hl-persona{margin-bottom:16px} @media(max-width:560px){.grid{grid-template-columns:1fr}}</style></head>
+<body>
+<div class="grid">
+  <article class="hl-card">
+    <div class="hl-persona"><span class="hl-orb hl-orb--sm hl-orb--green"></span><span class="hl-label hl-label--mint">Release planner</span></div>
+    <h3 class="hl-card__title">Launch without surprises</h3>
+    <p class="hl-card__body">Keeps milestones, owners and dates lined up as plans change.</p>
+    <p class="hl-card__meta">Skills</p>
+    <div class="hl-tags"><span class="hl-tag">Timeline checks</span><span class="hl-tag">Risk flags</span></div>
+  </article>
+  <div class="band">
+    <article class="hl-card hl-card--band">
+      <h3 class="hl-card__title">Portfolio view</h3>
+      <p class="hl-card__body">Every project's health on one page, updated as the work moves.</p>
+    </article>
+  </div>
+</div>
+</body></html>
