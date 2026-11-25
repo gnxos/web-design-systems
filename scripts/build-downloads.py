@@ -13,6 +13,7 @@ SYSTEMS = {
   "dewpoint":  dict(name="Dewpoint",  p="dp", ns="Dewpoint",  theme="light", btn="dp-btn dp-btn--primary",            fonts="Figtree, JetBrains Mono"),
   "hairline":  dict(name="Hairline",  p="hl", ns="Hairline",  theme="light", btn="hl-btn hl-btn--primary",            fonts="Albert Sans"),
   "gridlight": dict(name="Gridlight", p="gl", ns="Gridlight", theme="dark",  btn="gl-btn",                            fonts="Inter, DM Mono, Source Serif 4"),
+  "draftline": dict(name="Draftline", p="df", ns="Draftline", theme="light", btn="df-btn df-corners",                 fonts="Geist, Spline Sans Mono"),
   "cirrus":    dict(name="Cirrus",    p="cr", ns="Cirrus",    theme="light", btn="cr-btn",                            fonts="Inter Tight, JetBrains Mono"),
 }
 LICENSE = """FITTING ROOM FREE LAUNCH LICENSE  (draft for review before publishing)

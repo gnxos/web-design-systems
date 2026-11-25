@@ -1,0 +1,9 @@
+<!-- @dsCard group="Layout" height=250 subtitle="File tabs with corner marks over a code panel" -->
+<!doctype html>
+<html lang="en" data-theme="light">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tabs</title><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/),t=m?m[1]:'light';document.documentElement.setAttribute('data-theme',t);if(t==='dark')addEventListener('DOMContentLoaded',function(){[].forEach.call(document.querySelectorAll('.df-themed'),function(i){i.src=i.getAttribute('src').replace('-light.svg','-dark.svg')})})})();</script></head>
+<body>
+<div class="df-stage"><div class="df-tabs" role="tablist" aria-label="Setup file" data-tabs><button class="df-corners" role="tab" aria-selected="true" aria-controls="p1">board.toml</button><button class="df-corners" role="tab" aria-selected="false" aria-controls="p2">rollout.toml</button><button class="df-corners" role="tab" aria-selected="false" aria-controls="p3">keys.toml</button></div><div class="df-tabpanel" role="tabpanel" id="p1">Pins, memory and radios for one board.</div><div class="df-tabpanel" role="tabpanel" id="p2" hidden>Stages, health checks and how long to wait.</div><div class="df-tabpanel" role="tabpanel" id="p3" hidden>Who may sign a release.</div></div>
+<script>Draftline.init();</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<!-- @dsCard group="Forms" height=330 subtitle="Stacked ruled form and single field" -->
+<!doctype html>
+<html lang="en" data-theme="light">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Input</title><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/),t=m?m[1]:'light';document.documentElement.setAttribute('data-theme',t);if(t==='dark')addEventListener('DOMContentLoaded',function(){[].forEach.call(document.querySelectorAll('.df-themed'),function(i){i.src=i.getAttribute('src').replace('-light.svg','-dark.svg')})})})();</script></head>
+<body>
+<div class="df-stage"><div class="df-row" style="align-items:flex-start;gap:32px"><form class="df-form df-corners" onsubmit="return false" style="width:min(420px,100%)"><label><span>Name</span><input placeholder="Your name"></label><label><span>Work email</span><input type="email" placeholder="you@yourteam.com"></label><div class="df-form__pair"><label><span>Fleet size</span><select><option>Fleet size</option><option>Under 100</option></select></label><label><span>Board family</span><select><option>Board family</option><option>Low power</option></select></label></div><button class="df-btn df-corners">Send request</button></form><label class="df-field">Device name<input aria-invalid="true" value="bench 01"><small>Use letters, numbers and hyphens.</small></label></div></div>
+<script>Draftline.init();</script>
+</body>
+</html>

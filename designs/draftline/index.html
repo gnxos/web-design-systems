@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Draftline design system</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  :root { color-scheme: light; --bg:#f9f9f9; --fg:#0d0d0d; --muted:#525252; --line:#e4e4e4; --card:#fff; }
+  html[data-ui="dark"] { color-scheme: dark; --bg:#0c0d0d; --fg:#eef2f0; --muted:#b3bab7; --line:#262a28; --card:#141615; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 "Geist", system-ui, sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:24px 16px 64px; }
+  .top { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; margin-bottom:16px; }
+  .top a { color:var(--fg); }
+  .themes { display:flex; gap:6px; }
+  .themes button { font:inherit; font-size:13px; padding:6px 14px; border-radius:0; border:1px solid var(--fg); background:transparent; color:var(--fg); cursor:pointer; }
+  .themes button[aria-pressed="true"] { background:var(--fg); color:var(--bg); }
+  .header { border:1px solid var(--line); background:var(--card); padding:56px 48px; min-height:260px; display:flex; flex-direction:column; justify-content:flex-end; gap:12px; }
+  .header h1 { margin:0; font-weight:500; font-size:clamp(34px,3.06vw,44px); line-height:1.2; letter-spacing:-.88px; max-width:16em; }
+  .header p { margin:0; color:var(--muted); font-family:"Spline Sans Mono",monospace; text-transform:uppercase; font-size:12px; letter-spacing:.48px; }
+  p.lede { color:var(--muted); max-width:720px; margin:20px 0 8px; }
+  nav.links { display:flex; flex-wrap:wrap; gap:14px; font-size:14px; margin-bottom:8px; }
+  nav.links a { color:var(--fg); }
+  .cover { margin:24px 0; border-radius:0; overflow:hidden; border:1px solid var(--line); background:var(--card); }
+  .cover iframe { display:block; width:960px; height:288px; border:0; transform-origin:0 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:0; margin:16px 0; overflow:hidden; }
+  .card header { display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; padding:12px 16px; border-bottom:1px solid var(--line); }
+  .card header h2 { margin:0; font-size:17px; }
+  .card header span { color:var(--muted); font-size:13px; flex:1 1 200px; }
+  .card header a { color:var(--fg); font-size:13px; }
+  .card iframe { display:block; width:100%; border:0; }
+  a:focus-visible, button:focus-visible { outline:2px solid #137a62; outline-offset:2px; }
+</style></head>
+<body><div class="wrap">
+  <div class="top"><a href="../../index.html">← All design systems</a><div class="themes"><button data-theme-btn="light">Light</button><button data-theme-btn="dark">Dark</button></div></div>
+  <header class="header"><p>[ Design system ]</p><h1>A ruled drafting sheet for technical products.</h1></header>
+  <p class="lede">Warm-white paper, ruled columns, square corners with bracket marks, mono uppercase controls, one teal accent and isometric line drawings.</p>
+  <nav class="links"><a href="README.md">Brand book</a><a href="imagery.md">Imagery guide</a><a href="motion.md">Motion guide</a><a href="accessibility.md">Accessibility</a><a href="tokens.json">tokens.json</a><a href="tokens.css">tokens.css</a><a href="components/bundle.css">bundle.css</a><a href="components/bundle.js">bundle.js</a><a href="assets/">Images</a></nav>
+  <div class="cover" id="cover"><iframe title="Cover" data-src="components/Cover/preview.html"></iframe></div>
+  <section class="card"><header><h2>Accordion</h2><span>Content. Ruled rows with a rotating plus</span><a href="components/Accordion/README.md">Guidelines</a></header><iframe loading="lazy" title="Accordion preview" data-src="components/Accordion/preview.html" style="height:284px"></iframe></section><section class="card"><header><h2>Banner</h2><span>Feedback. Textured teal strip and a corner-marked callout</span><a href="components/Banner/README.md">Guidelines</a></header><iframe loading="lazy" title="Banner preview" data-src="components/Banner/preview.html" style="height:224px"></iframe></section><section class="card"><header><h2>Button</h2><span>Actions. Bevelled teal, ruled, quiet and link faces with corner marks</span><a href="components/Button/README.md">Guidelines</a></header><iframe loading="lazy" title="Button preview" data-src="components/Button/preview.html" style="height:294px"></iframe></section><section class="card"><header><h2>Card</h2><span>Content. Comparison reading with tick-mark dial</span><a href="components/Card/README.md">Guidelines</a></header><iframe loading="lazy" title="Card preview" data-src="components/Card/preview.html" style="height:354px"></iframe></section><section class="card"><header><h2>Chip</h2><span>Actions. Corner-marked tags and square filter chips</span><a href="components/Chip/README.md">Guidelines</a></header><iframe loading="lazy" title="Chip preview" data-src="components/Chip/preview.html" style="height:234px"></iframe></section><section class="card"><header><h2>Dropdown</h2><span>Forms. Ruled two-column menu; keyboard support</span><a href="components/Dropdown/README.md">Guidelines</a></header><iframe loading="lazy" title="Dropdown preview" data-src="components/Dropdown/preview.html" style="height:324px"></iframe></section><section class="card"><header><h2>FeatureCard</h2><span>Content. Numbered cells with isometric drawings</span><a href="components/FeatureCard/README.md">Guidelines</a></header><iframe loading="lazy" title="FeatureCard preview" data-src="components/FeatureCard/preview.html" style="height:384px"></iframe></section><section class="card"><header><h2>Footer</h2><span>Layout. Name beside bracket-headed mono columns</span><a href="components/Footer/README.md">Guidelines</a></header><iframe loading="lazy" title="Footer preview" data-src="components/Footer/preview.html" style="height:284px"></iframe></section><section class="card"><header><h2>Hero</h2><span>Layout. Trace-field art, centred headline, two actions, command box</span><a href="components/Hero/README.md">Guidelines</a></header><iframe loading="lazy" title="Hero preview" data-src="components/Hero/preview.html" style="height:624px"></iframe></section><section class="card"><header><h2>Input</h2><span>Forms. Stacked ruled form and single field</span><a href="components/Input/README.md">Guidelines</a></header><iframe loading="lazy" title="Input preview" data-src="components/Input/preview.html" style="height:354px"></iframe></section><section class="card"><header><h2>MediaTile</h2><span>Content. Exploded layer stack with decoding labels</span><a href="components/MediaTile/README.md">Guidelines</a></header><iframe loading="lazy" title="MediaTile preview" data-src="components/MediaTile/preview.html" style="height:559px"></iframe></section><section class="card"><header><h2>NavBar</h2><span>Layout. 67px bar with mono uppercase links and corner-marked actions</span><a href="components/NavBar/README.md">Guidelines</a></header><iframe loading="lazy" title="NavBar preview" data-src="components/NavBar/preview.html" style="height:164px"></iframe></section><section class="card"><header><h2>PostCard</h2><span>Content. Articles with a drawing on dotted ground</span><a href="components/PostCard/README.md">Guidelines</a></header><iframe loading="lazy" title="PostCard preview" data-src="components/PostCard/preview.html" style="height:344px"></iframe></section><section class="card"><header><h2>Pricing</h2><span>Content. Three ruled plans, one tinted</span><a href="components/Pricing/README.md">Guidelines</a></header><iframe loading="lazy" title="Pricing preview" data-src="components/Pricing/preview.html" style="height:414px"></iframe></section><section class="card"><header><h2>SectionHeader</h2><span>Layout. Bracketed label, title and lead between rules</span><a href="components/SectionHeader/README.md">Guidelines</a></header><iframe loading="lazy" title="SectionHeader preview" data-src="components/SectionHeader/preview.html" style="height:389px"></iframe></section><section class="card"><header><h2>Stat</h2><span>Content. Variable-named figures in a ruled bar</span><a href="components/Stat/README.md">Guidelines</a></header><iframe loading="lazy" title="Stat preview" data-src="components/Stat/preview.html" style="height:194px"></iframe></section><section class="card"><header><h2>Table</h2><span>Content. Mono table with status tags</span><a href="components/Table/README.md">Guidelines</a></header><iframe loading="lazy" title="Table preview" data-src="components/Table/preview.html" style="height:274px"></iframe></section><section class="card"><header><h2>Tabs</h2><span>Layout. File tabs with corner marks over a code panel</span><a href="components/Tabs/README.md">Guidelines</a></header><iframe loading="lazy" title="Tabs preview" data-src="components/Tabs/preview.html" style="height:274px"></iframe></section><section class="card"><header><h2>Terminal</h2><span>Content. Command box with caret and numbered code block</span><a href="components/Terminal/README.md">Guidelines</a></header><iframe loading="lazy" title="Terminal preview" data-src="components/Terminal/preview.html" style="height:434px"></iframe></section><section class="card"><header><h2>Testimonial</h2><span>Content. Quote cells with square avatars</span><a href="components/Testimonial/README.md">Guidelines</a></header><iframe loading="lazy" title="Testimonial preview" data-src="components/Testimonial/preview.html" style="height:274px"></iframe></section><section class="card"><header><h2>Ticker</h2><span>Content. 24s marquee of ruled cells</span><a href="components/Ticker/README.md">Guidelines</a></header><iframe loading="lazy" title="Ticker preview" data-src="components/Ticker/preview.html" style="height:114px"></iframe></section>
+</div>
+<script>
+(function () {
+  var theme = "light";
+  function load() {
+    document.documentElement.setAttribute("data-ui", theme);
+    document.querySelectorAll("iframe[data-src]").forEach(function (f) { f.src = f.getAttribute("data-src") + "?theme=" + theme; });
+    document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-theme-btn") === theme ? "true" : "false"); });
+  }
+  document.querySelectorAll("[data-theme-btn]").forEach(function (b) { b.addEventListener("click", function () { theme = b.getAttribute("data-theme-btn"); load(); }); });
+  function fitCover() { var c = document.getElementById("cover"); if (!c) return; var f = c.querySelector("iframe"), s = c.clientWidth / 960; f.style.transform = "scale(" + s + ")"; c.style.height = (288 * s) + "px"; }
+  window.addEventListener("resize", fitCover); fitCover(); load();
+})();
+</script>
+</body></html>

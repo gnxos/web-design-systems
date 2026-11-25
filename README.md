@@ -1,6 +1,6 @@
 # Fitting Room
 
-Fitting Room is a set of seven complete, brand-neutral design systems: tokens, brand books, illustration/imagery and motion guides, live components and original image kits. Each one is ready to drop into a web project or hand to an AI agent as a style guide.
+Fitting Room is a set of eight complete, brand-neutral design systems: tokens, brand books, illustration/imagery and motion guides, live components and original image kits. Each one is ready to drop into a web project or hand to an AI agent as a style guide.
 
 | System | Look | Fonts | Themes |
 | --- | --- | --- | --- |
@@ -11,6 +11,7 @@ Fitting Room is a set of seven complete, brand-neutral design systems: tokens, b
 | [**Cirrus**](designs/cirrus/) | White pages, one vivid blue, pill buttons, sky-gradient cards with frosted glass, blur-in words, a black closing section | Inter Tight, JetBrains Mono | Light, Dark |
 | [**Hairline**](designs/hairline/) | Ink on white, thin display type, pill buttons, one gradient phrase, pastel highlighter labels, work graphs of floating cards and glowing orbs | Albert Sans | Light, Dark |
 | [**Gridlight**](designs/gridlight/) | Black page lit from the corner, one-pixel framed sections, compact white and grey buttons, constellations, punched report covers, words resolving from blur | Inter, DM Mono, Source Serif 4 | Dark, Light |
+| [**Draftline**](designs/draftline/) | Warm-white ruled sheets, square corners with bracket marks, mono uppercase controls, one teal accent, isometric line drawings and tick-mark dials | Geist, Spline Sans Mono | Light, Dark |
 
 All fonts are free (Google Fonts) and load from each system's `components/bundle.css`. Every image in the repo is original.
 

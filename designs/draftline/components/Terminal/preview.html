@@ -1,0 +1,9 @@
+<!-- @dsCard group="Content" height=410 subtitle="Command box with caret and numbered code block" -->
+<!doctype html>
+<html lang="en" data-theme="light">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Terminal</title><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/),t=m?m[1]:'light';document.documentElement.setAttribute('data-theme',t);if(t==='dark')addEventListener('DOMContentLoaded',function(){[].forEach.call(document.querySelectorAll('.df-themed'),function(i){i.src=i.getAttribute('src').replace('-light.svg','-dark.svg')})})})();</script></head>
+<body>
+<div class="df-stage"><div style="max-width:520px"><div class="df-term df-corners"><div class="df-term__body"><div class="df-term__note"># first build in a minute</div><div><span class="df-term__cmd" data-type>draftline build --board bench-01</span><span class="df-caret" aria-hidden="true"></span></div></div></div></div><div style="max-width:640px;margin-top:20px"><div class="df-row" style="justify-content:flex-end;margin-bottom:6px"><button class="df-btn df-btn--quiet df-corners" data-copy="code1">Copy code</button></div><pre class="df-code" id="code1"><span class="ln"><span class="k">from</span> draftline <span class="k">import</span> Fleet</span><span class="ln"></span><span class="ln">fleet = Fleet(<span class="s">"porch-sensors"</span>)</span><span class="ln">release = fleet.build(board=<span class="s">"bench-01"</span>)</span><span class="ln">release.sign()</span><span class="ln">release.roll_out(first=<span class="s">10</span>, then=<span class="s">"all"</span>)</span></pre></div></div>
+<script>Draftline.init();</script>
+</body>
+</html>

@@ -145,6 +145,31 @@
       "tokens.json"
     ]
   },
+  "draftline": {
+    "zip": "downloads/draftline.zip",
+    "bytes": 72196,
+    "files": 83,
+    "components": 21,
+    "colors": 27,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "assets": 24,
+    "contents": [
+      "INSTALL.md",
+      "LICENSE.txt",
+      "README.md",
+      "accessibility.md",
+      "assets",
+      "components",
+      "imagery.md",
+      "index.html",
+      "motion.md",
+      "tokens.css",
+      "tokens.json"
+    ]
+  },
   "cirrus": {
     "zip": "downloads/cirrus.zip",
     "bytes": 74727,
@@ -172,7 +197,7 @@
   },
   "all-systems": {
     "zip": "downloads/all-systems.zip",
-    "bytes": 557914,
+    "bytes": 629572,
     "systems": [
       "inkwell",
       "afterglow",
@@ -180,6 +205,7 @@
       "dewpoint",
       "hairline",
       "gridlight",
+      "draftline",
       "cirrus"
     ]
   }
