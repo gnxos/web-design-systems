@@ -1,0 +1,17 @@
+<!-- @dsCard group="Cover" height=288 subtitle="Frame cells from the radius scale, constellation, plain name" -->
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head><meta charset="utf-8"><title>Gridlight cover</title><link rel="stylesheet" href="../../tokens.css"><script>(function(){var m=location.search.match(/theme=([\w-]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);})();</script>
+<!-- Derivation: the framed grid, the top-left beam, the node network and the radius scale 4, 8, 16, pill. -->
+<style>body{margin:0;width:960px;height:288px;overflow:hidden;background:radial-gradient(60% 130% at 0% 0%,var(--glow),transparent 70%),var(--surface);color:var(--on-surface);font-family:var(--font-sans);position:relative}
+.g{position:absolute;border:1px solid var(--outline-hairline)}.net{position:absolute;right:0;top:0;width:520px;height:288px;object-fit:cover;opacity:.9}
+h1{position:absolute;left:32px;bottom:22px;margin:0;font-size:56px;line-height:64px;font-weight:500;letter-spacing:-2.4px}
+b{position:absolute;display:block}</style></head>
+<body><img class="net" id="n" src="../../assets/Networks/constellation-dark.svg" alt="">
+<div class="g" style="left:16px;top:16px;right:16px;bottom:16px"></div><div class="g" style="left:480px;top:16px;bottom:16px;width:0"></div><div class="g" style="left:16px;right:16px;top:150px;height:0"></div>
+<b style="left:496px;top:166px;width:210px;height:106px;border-radius:16px;background:var(--surface-container);border:1px solid var(--outline)"></b>
+<b style="left:512px;top:230px;width:96px;height:28px;border-radius:8px;background:var(--primary)"></b><b style="left:616px;top:230px;width:72px;height:28px;border-radius:999px;background:var(--fill-secondary)"></b>
+<b style="left:512px;top:182px;width:28px;height:28px;border-radius:4px;background:var(--blue)"></b><b style="left:548px;top:182px;width:28px;height:28px;border-radius:50%;background:var(--warm)"></b>
+<h1>Gridlight</h1>
+<script>if(document.documentElement.getAttribute('data-theme')==='light')document.getElementById('n').src='../../assets/Networks/constellation-light.svg';</script>
+</body></html>

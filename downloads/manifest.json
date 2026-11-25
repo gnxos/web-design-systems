@@ -120,6 +120,31 @@
       "tokens.json"
     ]
   },
+  "gridlight": {
+    "zip": "downloads/gridlight.zip",
+    "bytes": 69433,
+    "files": 78,
+    "components": 21,
+    "colors": 29,
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "assets": 18,
+    "contents": [
+      "INSTALL.md",
+      "LICENSE.txt",
+      "README.md",
+      "accessibility.md",
+      "assets",
+      "components",
+      "imagery.md",
+      "index.html",
+      "motion.md",
+      "tokens.css",
+      "tokens.json"
+    ]
+  },
   "cirrus": {
     "zip": "downloads/cirrus.zip",
     "bytes": 74727,
@@ -147,13 +172,14 @@
   },
   "all-systems": {
     "zip": "downloads/all-systems.zip",
-    "bytes": 489027,
+    "bytes": 557914,
     "systems": [
       "inkwell",
       "afterglow",
       "halftone",
       "dewpoint",
       "hairline",
+      "gridlight",
       "cirrus"
     ]
   }

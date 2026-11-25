@@ -1,0 +1,9 @@
+<!-- @dsCard group="Layout" height=300 subtitle="Slanted folder tabs and a segmented switch" -->
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tabs</title><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../bundle.css"><script src="../bundle.js"></script><script>(function(){var m=location.search.match(/theme=([\w-]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);})();</script></head>
+<body>
+<div class="gl-stage"><div class="gl-folders" role="tablist" aria-label="Library" data-tabs><button class="gl-folder" role="tab" aria-selected="true" aria-controls="t1"><span>Newest</span></button><button class="gl-folder" role="tab" aria-selected="false" aria-controls="t2"><span>Field guides</span></button><button class="gl-folder" role="tab" aria-selected="false" aria-controls="t3"><span>Templates</span></button></div><div class="gl-folderbody" id="t1" role="tabpanel">New writing from the team.</div><div class="gl-folderbody" id="t2" role="tabpanel" hidden>Practical guides for running a shift.</div><div class="gl-folderbody" id="t3" role="tabpanel" hidden>Checklists you can copy.</div><p class="gl-cap" style="margin-top:24px">Segmented</p><div class="gl-seg" role="tablist" aria-label="View" data-tabs><button role="tab" aria-selected="true">Today</button><button role="tab" aria-selected="false">Reports</button></div></div>
+<script>Gridlight.init();</script>
+</body>
+</html>
